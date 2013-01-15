@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% set active_page = "common" %}
+{% block title %}Common Keywords{% endblock %}
+{% block content %}
+    <h3>List of Common Keywords</h3>
+ 
+	<div class="container">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Word</th>
+					<th>Score</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for (word, total_sore) in pairs %}
+				<tr>
+					<td>
+						<a href="/search?query={{word}}">{{ word }}</a>
+					</td>
+					<td>{{ total_score }}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>		
+	
+{% endblock %}

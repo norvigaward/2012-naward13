@@ -1,0 +1,8 @@
+syntax: glob
+bin/*
+*~
+*.pyc
+presentation/pairs.db
+traitor-data/*
+*.orig
+traitortool.jar

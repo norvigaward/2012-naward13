@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/Challenge/src/nl/utwente/evilgeniuses/traitor/hadoop/TraitorTool.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.ui.favoriteGroups">
+<listEntry value="org.eclipse.debug.ui.launchGroup.run"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="nl.utwente.evilgeniuses.traitor.hadoop.TraitorTool"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-in /home/participant/data/*.arc.gz&#10;-out traitor-data/local-testset.d&#10;-overwrite"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Challenge"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Djava.library.path=/opt/hadoop-0.20/lib/native/Linux-amd64-64"/>
+</launchConfiguration>

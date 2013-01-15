@@ -1,0 +1,1962 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass scrartcl
+\begin_preamble
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
+\end_preamble
+\use_default_options true
+\begin_modules
+fixltx2e
+fix-cm
+logicalmkup
+enumitem
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\columnsep 0.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 2
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Associating Concepts from the Web with
+\noun on
+ Traitor
+\end_layout
+
+\begin_layout Author
+\begin_inset Flex Noun
+status collapsed
+
+\begin_layout Plain Layout
+Lesley Wevers
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\size footnotesize
+
+\begin_inset CommandInset href
+LatexCommand href
+target "l.wevers@utwente.nl"
+type "mailto:"
+
+\end_inset
+
+
+\size default
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+and 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Noun
+status collapsed
+
+\begin_layout Plain Layout
+Oliver Jundt
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\size footnotesize
+
+\begin_inset CommandInset href
+LatexCommand href
+target "s0213500@student.utwente.nl"
+type "mailto:"
+
+\end_inset
+
+
+\size default
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+and 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Noun
+status collapsed
+
+\begin_layout Plain Layout
+Wanno Drijfhout
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\size footnotesize
+
+\begin_inset CommandInset href
+LatexCommand href
+target "s0166960@student.utwente.nl"
+type "mailto:"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Publishers
+University of Twente
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+NO MORE THAN 2000 words!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Idea
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+introduce a real world problem that our idea solves
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+What do Apple, Samsung, Microsoft, IBM etc.
+ have in common, if anything? What does 
+\noun on
+Java
+\noun default
+ have that 
+\noun on
+PHP
+\noun default
+ does not have? Which extra terms could refine the search query “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+lance armstrong
+\end_layout
+
+\end_inset
+
+”? What is the context of a sentence, such as “
+\emph on
+Food, games and shelter are just as important as health
+\emph default
+”? How can (animal) types be organized in taxonomies?
+\end_layout
+
+\begin_layout Standard
+You may know the answers to these questions or know where to look for them
+ - but can a computer answer these questions for you too? We suspect this
+ could be the case if the computer had a data set of associated 
+\emph on
+concepts
+\emph default
+.
+ An example to illustrate why we have this suspicion: if we know that the
+ concepts of the two companies Apple and Samsung are both frequently associated
+ with the concept of a “phone”, we can conclude that “phone” is something
+ they have in common.
+\end_layout
+
+\begin_layout Standard
+Our idea is to test our suspicion with 
+\noun on
+Traitor
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+See 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://evilgeniuses.ophanus.net
+\end_layout
+
+\end_inset
+
+ for a demo.
+\end_layout
+
+\end_inset
+
+
+\noun default
+, a tool we developed that has a database of associated concepts and understands
+ questions similar to our examples.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+We were looking for a name that elegantly captures the trait idea and at
+ the same time has some evil touch such that it matches our group name 
+\noun on
+Evil Geniuses
+\noun default
+.
+ We believe that we found it with 
+\noun on
+Traitor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Method
+\end_layout
+
+\begin_layout Standard
+In the following we describe how the two essential parts of 
+\noun on
+Traitor
+\noun default
+, the association database and query interfaces, were created and work.
+\end_layout
+
+\begin_layout Subsection
+Part 1: Associated Concepts
+\end_layout
+
+\begin_layout Standard
+To extract associated concepts from the Common Crawl data set, we have implement
+ed a map-reduce program in 
+\noun on
+Java
+\noun default
+ for 
+\noun on
+Hadoop
+\noun default
+.
+ This program runs on SARA’s 
+\noun on
+Hadoop
+\noun default
+ cluster and processes 25TB of web pages.
+ The program depends on two assumptions we make:
+\end_layout
+
+\begin_layout Enumerate
+A word represents a concept;
+\end_layout
+
+\begin_layout Enumerate
+If two words co-occur in a sentence, the concepts they represent are associated
+ by humans.
+\end_layout
+
+\begin_layout Standard
+As we will discuss later (see 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sub:Ambiguous-words"
+
+\end_inset
+
+), assumption 1 has only a limited validity.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Mapper
+\end_layout
+
+\begin_layout Standard
+In a few steps (see 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Traitor-mapper-workflow"
+
+\end_inset
+
+ or Javadoc
+\begin_inset CommandInset citation
+LatexCommand cite
+key "drijfhouttraitor"
+
+\end_inset
+
+) our mapper transforms the raw HTML responses from the Common Crawl data
+ set to a list of key value pairs 
+\begin_inset Formula $\left(k,v\right)$
+\end_inset
+
+, where the key 
+\begin_inset Formula $k$
+\end_inset
+
+ is a word pair 
+\begin_inset Formula $\left(w_{1},w_{2}\right)$
+\end_inset
+
+ that co-occurred in some sentence on the page, and the value 
+\begin_inset Formula $v$
+\end_inset
+
+ denotes the number of pages on which this co-occurrence has been found.
+ We consider the ‘count’ of co-occurring word pairs as a measure of the
+ association’s 
+\emph on
+strength
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+In sequence, the 
+\noun on
+Traitor
+\noun default
+ mapper performs the following steps:
+\end_layout
+
+\begin_layout Enumerate
+discard documents that are not HTML-formatted or do not have status code
+ 200 (OK);
+\end_layout
+
+\begin_layout Enumerate
+extract plain text content from the HTML page using the 
+\noun on
+BoilerPipe
+\noun default
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kohlschutterboilerpipe"
+
+\end_inset
+
+ library;
+\end_layout
+
+\begin_layout Enumerate
+split the plain text into sentences using a regular expression;
+\end_layout
+
+\begin_layout Enumerate
+discard sentences containing source code;
+\end_layout
+
+\begin_layout Enumerate
+discard non-alphabetic tokens from sentences, such as numbers
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Consequently, Traitor does not process years, product model numbers and
+ IDs etc.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+discard sentences that are “probably” not English
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+The heuristic to determine whether a sentence is English, is rather crude
+ and imprecise: we check if a sentence contains at least two ‘common typically
+ English words’.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+count each distinct co-occurring word pair in the page’s sentences once
+ and emit the tuple 
+\begin_inset Formula $\left(w_{1},w_{2},1\right)$
+\end_inset
+
+ such that 
+\begin_inset Formula $w_{1}\leq w_{2}$
+\end_inset
+
+ (lexicographically).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide true
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[node distance = 2cm, auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+    % Place nodes
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+node [cloud] (Raw) {Raw HTML page};
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+node [block, below of=Raw, node distance=1.5cm] (DocumentExtractor) {Document
+ extraction};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [cloud, below of=DocumentExtractor, node distance=1.5cm] (Document)
+ {Document with sentences};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [block, below of=Document, node distance=1.5cm] (WordExtractor) {Word
+ extraction};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [cloud, below of=WordExtractor, node distance=1.5cm] (Words) {`Non-trivial'
+ words (per sentence)};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [block, below of=Words, node distance=1.5cm] (PairFinder) {Word pair
+ finding};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [cloud, below of=PairFinder, node distance=1.5cm] (Tuples) {Tuples (
+\backslash
+texttt{wordA}, 
+\backslash
+texttt{wordB}, 1)};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+path [line,dashed] (Raw) -- (DocumentExtractor);
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+path [line,dashed] (DocumentExtractor) -- (Document);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+path [line,dashed] (Document) -- (WordExtractor);
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+path [line,dashed] (WordExtractor) -- (Words);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+path [line,dashed] (Words) -- (PairFinder);
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+path [line,dashed] (PairFinder) -- (Tuples);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+node [cloud, right of=init] (system) {system};
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+node [block, below of=init] (identify) {identify candidate models};
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+node [block, below of=identify] (evaluate) {evaluate candidate models};
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+node [block, left of=evaluate, node distance=3cm] (update) {update model};
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+node [decision, below of=evaluate] (decide) {is best candidate better?};
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+node [block, below of=decide, node distance=3cm] (stop) {stop};
+\end_layout
+
+\begin_layout Plain Layout
+
+    % Draw edges
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+path [line] (init) -- (identify);
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+path [line] (identify) -- (evaluate);
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+path [line] (evaluate) -- (decide);
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+path [line] (decide) -| node [near start] {yes} (update);
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+path [line] (update) |- (identify);
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+path [line] (decide) -- node {no}(stop);
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+path [line,dashed] (expert) -- (init);
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+path [line,dashed] (system) -- (init);
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+path [line,dashed] (system) |- (evaluate);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Description of the 
+\noun on
+Traitor
+\noun default
+ mapper workflow.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Traitor-mapper-workflow"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We have chosen sentences as the semantic unit (rather than the same paragraph
+ or document) for generating word pairs for two reasons.
+ A technical reason is to constrain the result size.
+ Pairing every non-trivial word with every other is 
+\begin_inset Formula $O\left(n^{2}\right)$
+\end_inset
+
+.
+ A logical reason is based on human language semantics.
+ We assume that word co-occurrences within a sentence are more likely to
+ represent actual associations than co-occurrences of words that are spread
+ over a whole document.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Reducer
+\end_layout
+
+\begin_layout Standard
+In the reduction phase we sum the counts of the word pairs produced by the
+ mapper.
+ Because the distribution of word pairs follows a Zipf distribution (see
+ 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Histogram"
+
+\end_inset
+
+), we find that the majority of the resulting pairs have a very low count.
+ To reduce storage cost of the final output, we can discard pairs with a
+ count less than some 
+\begin_inset Formula $N$
+\end_inset
+
+; e.g.
+ if 
+\begin_inset Formula $N=2$
+\end_inset
+
+, we discard all pairs that only occur once.
+ Essentially, this allows us to reduce the output to any size that we can
+ handle in the presentation layer.
+ Unfortunately, pairs with rare words are cut indiscriminately due to this
+ policy, even if these co-occurring words are still usable associations.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide true
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename histogram-cluster-full.emf
+	lyxscale 25
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Histogram of word pair occurrences in the data set.
+ Rare word pair occurrences (fewer than 
+\begin_inset Formula $N=100$
+\end_inset
+
+ times) are excluded.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Histogram"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Part 2: Query Interfaces
+\end_layout
+
+\begin_layout Standard
+The resulting tuples from the map-reduce step are imported into a 
+\noun on
+SQLite3
+\noun default
+-database.
+ As a front-end to this database we have built a web application with two
+ query interfaces using 
+\noun on
+CherryPy
+\noun default
+ and 
+\noun on
+Jinja2
+\noun default
+.
+\end_layout
+
+\begin_layout Subsubsection
+Association search with set notation
+\end_layout
+
+\begin_layout Standard
+Users can enter search queries, similar to set notation, to do tasks like
+ finding similarities and differences between two concepts.
+\end_layout
+
+\begin_layout Standard
+A sequence of words, separated by spaces, denotes the conjunction/intersection
+ and yields the words that are associated with all words in the sequence.
+ A sequence of words, separated by plus-symbols, denotes the disjunction/union
+ and yields the words that are associated with any word in the sequence.
+ Words, preceded by a minus-symbol, denote the negation/complement.
+\end_layout
+
+\begin_layout Standard
+To illustrate: the query 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+(a + b) -c
+\end_layout
+
+\end_inset
+
+ would yield all words that are associated with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+
+ 
+\emph on
+or
+\emph default
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+b
+\end_layout
+
+\end_inset
+
+, 
+\emph on
+and not
+\emph default
+ with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+c
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Visualizing similarity relationships of concepts 
+\end_layout
+
+\begin_layout Standard
+A graphical interface allows users to visualize similarity relationships
+ of concepts in a 
+\emph on
+force directed graph
+\emph default
+ using 
+\noun on
+D3.js
+\noun default
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bostockd3js"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Users can enter a list of words which become labeled nodes in the graph.
+ The graphical size of the nodes indicates how many associations a concept
+ has.
+ The more associations a concept has, the bigger is the node.
+\end_layout
+
+\begin_layout Standard
+For each word in the query the system retrieves the 50 most strongly related
+ concepts.
+ One could interpret this top 50 ranked list as an estimate of the concept’s
+ context.
+\end_layout
+
+\begin_layout Standard
+For each word pair we apply the RBO metric
+\begin_inset CommandInset citation
+LatexCommand cite
+key "webber2010asimilarity"
+
+\end_inset
+
+ to estimate the similarity.
+ A link is created between two nodes if the similarity is more than 5%.
+ The length and thickness of the link indicate the similarity.
+ If two nodes are connected by a short thick line the corresponding concepts
+ share a very similar top 50 ranking.
+ Conversely, distant nodes and nodes without any link between them have
+ very few (or no) concepts in common.
+\end_layout
+
+\begin_layout Section
+Result
+\end_layout
+
+\begin_layout Standard
+In the following we try to assess the quality of the 
+\noun on
+Traitor
+\noun default
+’s query results to our introductory questions and additional samples.
+ The association database that we used for the query results contains over
+ 43 million extracted distinct word pairs.
+\end_layout
+
+\begin_layout Subsection
+Commonalities and recommending extra search query terms
+\end_layout
+
+\begin_layout Standard
+The first question from the introduction translates in 
+\noun on
+Traitor
+\noun default
+ to 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+apple samsung microsoft ibm
+\end_layout
+
+\end_inset
+
+” (i.e, what do those companies have in common?) and yields as top ranked
+ concepts: 
+\emph on
+software
+\emph default
+, 
+\emph on
+windows
+\emph default
+, 
+\emph on
+system
+\emph default
+, 
+\emph on
+mobile
+\emph default
+, 
+\emph on
+computer
+\emph default
+ etc.
+ This is a reasonable result.
+\end_layout
+
+\begin_layout Standard
+Recommending extra search query terms is a similar to finding commonalities.
+ For the query “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+lance armstrong
+\end_layout
+
+\end_inset
+
+”, 
+\noun on
+Traitor
+\noun default
+ returns 
+\emph on
+tour
+\emph default
+, 
+\emph on
+cancer
+\emph default
+, 
+\emph on
+france
+\emph default
+, 
+\emph on
+foundation
+\emph default
+, 
+\emph on
+team
+\emph default
+ and (further down) 
+\emph on
+livestrong
+\emph default
+, 
+\emph on
+race
+\emph default
+, 
+\emph on
+cycling
+\emph default
+ and 
+\emph on
+yellow
+\emph default
+.
+ These are rather good results compared to Google Trends
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ref <<http://www.google.com/trends/explore#q=lance%20armstrong>>
+\end_layout
+
+\end_inset
+
+ and allow the user to narrow down on a particular aspect of “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+lance armstrong
+\end_layout
+
+\end_inset
+
+”, such as “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+cancer
+\end_layout
+
+\end_inset
+
+”, eventually reaching 
+\emph on
+foundation
+\emph default
+ via “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+lance armstrong cancer
+\end_layout
+
+\end_inset
+
+”.
+\end_layout
+
+\begin_layout Standard
+Other queries of this type have results of varying quality, such as “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+amber alert
+\end_layout
+
+\end_inset
+
+” (yields 
+\emph on
+red
+\emph default
+ but also 
+\emph on
+girl
+\emph default
+ and 
+\emph on
+issued
+\emph default
+, later on), “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+political party
+\end_layout
+
+\end_inset
+
+” (yields 
+\emph on
+information
+\emph default
+ but also 
+\emph on
+democratic
+\emph default
+ and 
+\emph on
+republican
+\emph default
+), “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+vehicle
+\end_layout
+
+\end_inset
+
+” (yields 
+\emph on
+car
+\emph default
+, 
+\emph on
+motor
+\emph default
+, 
+\emph on
+insurance
+\emph default
+ etc.) and “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+music
+\end_layout
+
+\end_inset
+
+” (yields 
+\emph on
+video
+\emph default
+, 
+\emph on
+live
+\emph default
+, 
+\emph on
+download
+\emph default
+, 
+\emph on
+world
+\emph default
+, 
+\emph on
+play
+\emph default
+ etc.).
+ We reckon that names and categories (like “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+music
+\end_layout
+
+\end_inset
+
+”) generally yield better result than elements thereof (“
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+blues music
+\end_layout
+
+\end_inset
+
+” yields 
+\emph on
+rock
+\emph default
+, 
+\emph on
+band
+\emph default
+).
+\end_layout
+
+\begin_layout Subsection
+Differences
+\end_layout
+
+\begin_layout Standard
+The second question from the introduction translates to “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+java -php
+\end_layout
+
+\end_inset
+
+” (i.e., what associations does Java have that PHP does not?).
+ The results are interesting: 
+\emph on
+applet(s)
+\emph default
+, 
+\emph on
+alden
+\emph default
+, 
+\emph on
+jvm
+\emph default
+, 
+\emph on
+coffee
+\emph default
+, 
+\emph on
+marketplace
+\emph default
+, 
+\emph on
+east
+\emph default
+, 
+\emph on
+concentration
+\emph default
+, 
+\emph on
+flashcards
+\emph default
+, 
+\emph on
+servlet
+\emph default
+, 
+\emph on
+indonesia
+\emph default
+ etc.
+ Some results are associated with the 
+\noun on
+Java
+\noun default
+ programming language (but not 
+\noun on
+PHP
+\noun default
+!), the Java coffee brand and the Java island (East-Java).
+\end_layout
+
+\begin_layout Standard
+If we extend the query to “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+java coffee -php
+\end_layout
+
+\end_inset
+
+”, results include 
+\emph on
+cup
+\emph default
+, 
+\emph on
+bean(s)
+\emph default
+, 
+\emph on
+tea
+\emph default
+, 
+\emph on
+espresso
+\emph default
+ etc.
+ These results are reasonable answers to the query “concepts that are associated
+ with Java and coffee but not PHP”.
+\end_layout
+
+\begin_layout Standard
+Other queries have results of varying quality; e.g., “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+wii -xbox
+\end_layout
+
+\end_inset
+
+” (contains 
+\emph on
+balance
+\emph default
+, 
+\emph on
+kart
+\emph default
+, 
+\emph on
+nunchu(c)k
+\emph default
+) is good; “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+gates -jobs
+\end_layout
+
+\end_inset
+
+” (contains 
+\emph on
+melinda
+\emph default
+ as well as 
+\emph on
+wrought
+\emph default
+, 
+\emph on
+driveway
+\emph default
+), “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+twente -holland
+\end_layout
+
+\end_inset
+
+” (contains 
+\emph on
+fc
+\emph default
+, 
+\emph on
+mcclarens
+\emph default
+, 
+\emph on
+enschede
+\emph default
+ as well as 
+\emph on
+domestic
+\emph default
+, 
+\emph on
+huge
+\emph default
+) slightly worse.
+ We reckon more words that are both commonly used and unambiguous (e.g., Wii)
+ yield better results.
+\end_layout
+
+\begin_layout Subsection
+Deducing contexts of sentences
+\end_layout
+
+\begin_layout Standard
+The association search interface can also be used for deducing contexts
+ of sentences.
+ For example, the query “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+food + games + and + shelter + are + just + as + important + as + health
+\end_layout
+
+\end_inset
+
+” produces the union of each word’s associations: 
+\emph on
+care
+\emph default
+, 
+\emph on
+insurance
+\emph default
+, 
+\emph on
+information
+\emph default
+, 
+\emph on
+play
+\emph default
+, 
+\emph on
+good
+\emph default
+.
+ Taking the union
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+The intersection would determine the words that are associated by all words
+ in the sentence with the consequence that, if only one word is out of context,
+ the resulting set of associations would be empty.
+\end_layout
+
+\end_inset
+
+ corresponds to the intuition that each word contributes extra meaning to
+ the sentence.
+\end_layout
+
+\begin_layout Standard
+For another query “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+haskell + is + better + than + python + or + java
+\end_layout
+
+\end_inset
+
+” 
+\noun on
+Traitor
+\noun default
+ yields reasonable results too: 
+\emph on
+code
+\emph default
+, 
+\emph on
+language
+\emph default
+, 
+\emph on
+application(s)
+\emph default
+, 
+\emph on
+programming
+\emph default
+, 
+\emph on
+software
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+Each word has its own associations.
+ For any such association to emerge as ‘context’ of the entire sentence,
+ the association must be very strong for either that single word, or for
+ multiple words combined.
+ We reckon the strongest associations describe the context of the sentence
+ best.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+nog niet helemaal goed.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Taxonomies
+\end_layout
+
+\begin_layout Standard
+For finding taxonomies, we created the visualization interface.
+ This type of question seems to be the most complex one with widely varying
+ quality of results.
+ For the introduction example of animals (see 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Visualizing-animals"
+
+\end_inset
+
+) the visualization is little insightful.
+ However, the visualization of a set of brands (see 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Visualizing-brands"
+
+\end_inset
+
+) illustrates the economic ties (e.g., competitors, similar sectors) between
+ the brands quite well.
+ The visualization of various countries (see 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Visualizing-countries"
+
+\end_inset
+
+) resembles geographical, economic or historical relationships between them,
+ but it requires knowledge of the user to guess what the visible clusters
+ actually mean.
+\end_layout
+
+\begin_layout Standard
+We reckon the set of brands is well-visualized because brands are often
+ compared and reviewed on the web (e.g., product reviews, news reports) and
+ each brand has both similarities and differences with other elements (e.g.,
+ Google and Microsoft are more alike than Microsoft and McDonalds).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename visualization-animals.png
+	height 30theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Visualizing 30 animals.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Visualizing-animals"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename visualization-brands.png
+	height 30theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Visualizing 28 brands.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Visualizing-brands"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename visualization-countries.png
+	height 30theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Visualizing 30 countries.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Visualizing-countries"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Various demo visualizations
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Visualizations"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Conclusion & Discussion
+\end_layout
+
+\begin_layout Standard
+Many of 
+\noun on
+Traitor
+\noun default
+’s results are indeed reasonable and as expected.
+ However, as already discussed in the previous chapter, we observed cases
+ where this is not the case.
+ If we take a closer look at what would improve the result quality for most
+ of these cases, we find the following problems that have to be solved.
+\end_layout
+
+\begin_layout Subsection
+Ambiguous words
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Ambiguous-words"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A weakness of 
+\noun on
+Traitor
+\noun default
+ is the assumption that each word corresponds to a single concept.
+ Words often represent multiple concepts; e.g.
+ “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+apple
+\end_layout
+
+\end_inset
+
+” refers to a company and a fruit.
+ 
+\noun on
+Traitor
+\noun default
+ does not distinguish between different meanings of words and it consequently
+ becomes very difficult to see which associations belong to which 
+\emph on
+meaning
+\emph default
+ in the query interfaces.
+ In practice this is not a problem if there exists one dominant meaning
+ of the word and the user is interested in exactly this meaning and only
+ the most strongly associated concepts.
+ Google Search has the same problem.
+ If you search for 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+apple
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+, you will have to click trough several result pages to actually find something
+ about the 
+\emph on
+fruit
+\emph default
+, because the company Apple is used much more often on the web.
+ However, as with Google, combining concepts in a query can help to achieve
+ the wanted results (e.g.
+ “
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+apple fruit
+\end_layout
+
+\end_inset
+
+”).
+\end_layout
+
+\begin_layout Subsection
+Only one word to describe concepts
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Only-one-word"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "sources"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

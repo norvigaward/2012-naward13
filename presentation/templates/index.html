@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% set active_page = "index" %}
+{% block title %}Welcome{% endblock %}
+{% block content %}
+<!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+        <h1>Traitor!</h1>
+        <p>We have built a &quot;Big Data&quot; program for research purposes and submitted it to the <a href="http://norvigaward.github.com/">Norvig Web Data Science Award</a>. Using a Hadoop cluster (at SARA), we have parsed many webpages and extracted &quot;co-occurring word pairs&quot; from sentences therein. We assume those pairs denote &quot;associated concepts&quot;. If you provide a query of words, Traitor will list you their associations.</p>
+        <p><a class="btn btn-primary btn-large" href="/search">Start searching &raquo;</a></p>
+      </div>
+      
+<!-- Example row of columns -->
+      <div class="row">
+        <div class="span4">
+          <h2>Similarities</h2>
+          <p>What do &quot;Microsoft&quot; and &quot;Google&quot; have in common?</p>
+          <p><a class="btn" href="/search?query=microsoft+google"><i class="icon-search"></i> Show me &raquo;</a></p>
+        </div>
+        <div class="span4">
+          <h2>Differences</h2>
+          <p>What do &quot;Samsung&quot; and &quot;LG&quot; have that &quot;Apple&quot; does not?</p>
+          <p><a class="btn" href="/search?query=samsung+lg+-apple"><i class="icon-search"></i> Show me &raquo;</a></p>
+       </div>
+        <div class="span4">
+          <h2>Comparisons</h2>
+          <p>How do the most popular brand names compare against each other?</p>
+          <p><a class="btn" href="/visualize?query=google+microsoft+apple+amazon+hp+yahoo+samsung+disney+ibm+nokia+cisco+bmw+toyota+blackberry+honda+mercedes+nike+intel+oracle+verizon+amd+nvidia+walmart+cola+vodafone+pepsi+gillette+mcdonalds"><i class="icon-eye-open"></i> Show me &raquo;</a></p>
+        </div>
+      </div>
+      
+{% endblock %}

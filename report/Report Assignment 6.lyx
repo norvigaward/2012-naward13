@@ -1,0 +1,2310 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\setcounter{section}{5}
+\end_preamble
+\use_default_options true
+\begin_modules
+customHeadersFooters
+enumitem
+fixltx2e
+fix-cm
+logicalmkup
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 3cm
+\rightmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Managing Big Data
+\end_layout
+
+\begin_layout Author
+\begin_inset Flex Noun
+status collapsed
+
+\begin_layout Plain Layout
+Lesley Wevers
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+(EWI-FMT)
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+and 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Noun
+status collapsed
+
+\begin_layout Plain Layout
+Oliver Jundt
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+(s0213500)
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+and 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Noun
+status collapsed
+
+\begin_layout Plain Layout
+Wanno Drijfhout
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+(s0166960)
+\end_layout
+
+\begin_layout Section
+Assignment 6
+\end_layout
+
+\begin_layout Standard
+We built the 
+\noun on
+Traitor
+\noun default
+ 
+\noun on
+Hadoop
+\noun default
+-program and web application.
+ From the source code documentation of the Hadoop-program (see 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Traitor-architecture-documentation"
+
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Quote
+The "
+\noun on
+Traitor
+\noun default
+" 
+\noun on
+Hadoop
+\noun default
+ program counts (non-trivial) pair-wise co-occurrences of words in English
+ sentences.
+ The co-occurrence of a pair of words is supposed to indicate a `relation'
+ between the words.
+ A separate interactive application will use these relations to visualize
+ concepts and their mutual similarities and differences.
+\end_layout
+
+\begin_layout Standard
+The 
+\noun on
+Hadoop
+\noun default
+-program produces a 
+\emph on
+co-occurrence table
+\emph default
+: a list of rows 
+\begin_inset Formula $\left(w_{1},w_{2},c\right)$
+\end_inset
+
+ where 
+\begin_inset Formula $w_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $w_{2}$
+\end_inset
+
+ are English words (lexicographically ordered 
+\begin_inset Formula $w_{1}\leq w_{2}$
+\end_inset
+
+) and 
+\begin_inset Formula $c\geq2$
+\end_inset
+
+ the number of times these words occurred in sentences in the data set.
+\end_layout
+
+\begin_layout Subsection*
+Results
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Results"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We have run the 
+\noun on
+Hadoop
+\noun default
+-program on all three datasets; the results are depicted in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:Data-set-results"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Data-set-results"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Relation between set size and results
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Relation-size-results"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We have measured the 
+\emph on
+number of tuples
+\emph default
+, the 
+\emph on
+maximum
+\emph default
+ of the co-occurrence tuples' 
+\begin_inset Formula $c$
+\end_inset
+
+-component (the ‘count’) and the sum thereof.
+ We plotted trend lines in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Data-set-results"
+
+\end_inset
+
+, searching for a simple formula to predicate and extrapolate results.
+\end_layout
+
+\begin_layout Standard
+Of the three graphs, the 
+\emph on
+number of tuples
+\emph default
+ and 
+\emph on
+sum of ‘count’
+\emph default
+ seemed least suitable.
+ They are significantly skewed due to the 
+\begin_inset Formula $\min\textit{count}\neq1$
+\end_inset
+
+; all tuples for word pairs that occurred less than 
+\begin_inset Formula $\min\textit{count}$
+\end_inset
+
+ were simply removed from the result—which is a 
+\emph on
+great
+\emph default
+ amount.
+ This artificial minimum was imposed by us to reduce storage cost
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Indeed, the results from the full data set would have cost 40GB, if 
+\begin_inset Formula $\min\textit{count}$
+\end_inset
+
+ were 2.
+ Imagining the size if 
+\begin_inset Formula $\min\textit{count}$
+\end_inset
+
+ were even 1 would be almost traumatic.
+\end_layout
+
+\end_inset
+
+ but may be the reason why their trend lines do not approach the origin
+ (1,1) of the graph.
+\end_layout
+
+\begin_layout Standard
+Only the 
+\emph on
+maximum of ‘count’
+\emph default
+ seems suitable for predication and extrapolation, given a data set size.
+ Its trend line 
+\emph on
+does
+\emph default
+ approach the graph's origin.
+ Moreover, this measurement suffers not from the artificial minimum counts.
+ Given that a data set of natural language text elements obeys Zipf's law
+ (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Co-occurrence-distribution"
+
+\end_inset
+
+), an actual relation between maximum count and the size of a data set with
+ 
+\emph on
+natural language ‘utterances’
+\emph default
+ seems likely.
+\end_layout
+
+\begin_layout Standard
+One may approximate the maximum count 
+\begin_inset Formula $\tilde{c}_{\max}$
+\end_inset
+
+ of some data set size 
+\begin_inset Formula $s$
+\end_inset
+
+ with 
+\begin_inset Formula $\tilde{c}_{\max}\left(s\right)=0,5442s$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Table of results per data set.
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Data-set-results"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="7">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="right" valignment="top" width="0pt">
+<column alignment="right" valignment="top" width="0">
+<column alignment="right" valignment="top" width="0">
+<column alignment="right" valignment="top" width="0">
+<column alignment="right" valignment="top" width="0">
+<column alignment="right" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Data set
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Set size
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Number of tuples
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\min\textit{count}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+\begin_inset Formula $\max\textit{count}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sum\textit{count}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Duration
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Local test
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+163MB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+51 808
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+288
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+145 928
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+31s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cluster test
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6.6GB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+1 155 938
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+2 294
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+4 121 504
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+4m42s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cluster full
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+25TB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+43 001 374
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+14 267 145
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+52 604 994 892
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+a few hours
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename assignment 6-data set results.emf
+	lyxscale 25
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Graph of the results per data set (
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:Data-set-results"
+
+\end_inset
+
+).
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Data-set-results"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Co-occurrence distribution histogram
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Co-occurrence-distribution"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We have created histograms from the co-occurrence tables for each of the
+ data set (see 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Co-occurrence-distribution-histograms"
+
+\end_inset
+
+).
+ Depite some outliers, each histogram approximates a (clipped) power distributio
+n; more specifically, a Zipfian distribution.
+\end_layout
+
+\begin_layout Standard
+Zipf's law states that, given a collection of natural language expressions
+ (‘utterances’), the 
+\emph on
+frequency
+\emph default
+ of a word is inversely proportional to its 
+\emph on
+rank
+\emph default
+ in the frequency table (i.e., histogram).
+ The word ranked primary is (i.e., should be) used 
+\emph on
+twice
+\emph default
+ as often as the word ranked secondary etc.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename histogram-local-test.emf
+	lyxscale 25
+	width 100text%
+	height 29theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Local test set (163MB).
+ Occurrences below 2 are clipped.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename histogram-cluster-test.emf
+	lyxscale 25
+	width 100text%
+	height 29theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Cluster test set (6,6GB).
+ Occurrences below 2 are clipped.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename histogram-cluster-full.emf
+	lyxscale 25
+	width 100text%
+	height 29theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Cluster full test (25TB).
+ Occurrences below 100 are clipped.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Co-occurrence distribution histograms
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Co-occurrence-distribution-histograms"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Results from local test set
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ Report your results on the local test set. Are the results as expected? Extrapol
+ate  your results to a) the expected results on the SARA test set, and b) the ex
+pected results on the full  data set, and explain how you did the extrapolation. 
+In case the results on the local set are empty,  report an alternative way to lo
+cally test your code.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Running 
+\noun on
+Traitor
+\noun default
+ on the local test set yields 51808 tuples in the co-occurrence table.
+ (With regard to 
+\begin_inset Quotes eld
+\end_inset
+
+extrapolation
+\begin_inset Quotes erd
+\end_inset
+
+, we refer to 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Relation-size-results"
+
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Paragraph
+Test queries.
+\end_layout
+
+\begin_layout Standard
+To indicate the quality of the results, we have chosen a few test queries
+ that we repeated for each data set.
+ The local test set yielded the following results:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="3">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="15text%">
+<column alignment="right" valignment="top" width="10text%">
+<column alignment="left" valignment="top" width="65text%">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Query
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+# Results
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Top results
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+microsoft
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+linux server solution costs exchange
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+gates -jobs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+24
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+knowledge line mary mentor participated
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+twente
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+java -php
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+games wordpress drupal engine mysql apache
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+wii -xbox
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We expected more results but find these acceptable considering that 
+\noun on
+Traitor
+\noun default
+ aggressively filters its input.
+ Most notably, it only pairs words in the same sentence.
+ Documents about some subject (e.g., 
+\begin_inset Quotes eld
+\end_inset
+
+Microsoft
+\begin_inset Quotes erd
+\end_inset
+
+) will not mention Microsoft in 
+\emph on
+every sentence
+\emph default
+ in the document.
+ As such, many 
+\emph on
+relations
+\emph default
+ that humans could establish through reading are not deduced by 
+\noun on
+Traitor
+\noun default
+.
+ Due to the sheer volume of documents (and sentences) in larger data sets,
+ we hope to alleviate this lacking.
+\end_layout
+
+\begin_layout Subsection
+Results from cluster test set
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Report your results on the test set on the SARA cluster, and report the time it 
+takes  to run your program. Make a new estimate of the results on the full data s
+et. Also, make an estimate  of the time your program will take on the full data s
+et.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Running 
+\noun on
+Traitor
+\noun default
+ on the cluster test set yields 1155938 tuples in the co-occurrence table.
+ (With regard to 
+\begin_inset Quotes eld
+\end_inset
+
+extrapolation
+\begin_inset Quotes erd
+\end_inset
+
+, we refer to 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Relation-size-results"
+
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Standard
+The job took 4m42s, including 5 seconds of booting time
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+13/01/08 00:20:35, 13/01/08 00:20:40, 13/01/08 00:25:17
+\end_layout
+
+\end_inset
+
+.
+ If processing the 
+\emph on
+full
+\emph default
+ data set on the cluster is as fast as the test set, the job would take
+ about 13 days.
+ Luckily, the job with the full set is run on more workers
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+how many?
+\end_layout
+
+\end_inset
+
+; it only took a few hours, although a few retries were necessary.
+\end_layout
+
+\begin_layout Paragraph
+Test queries.
+\end_layout
+
+\begin_layout Standard
+The cluster test set yielded the following test query results.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="3">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="15text%">
+<column alignment="right" valignment="top" width="10text%">
+<column alignment="left" valignment="top" width="65text%">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Query
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+# Results
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Top results
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+microsoft
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+184
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+windows office software server word security system(s) product xbox yahoo
+ questions services
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+gates -jobs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+347
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+microsoft melinda reagan straight generation till vaccine reactor rights
+ seattle rely secretary
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+twente
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+java -php
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+117
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+sun virtual mobile run javascript language ruby services program machine
+ return microsoft
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+wii -xbox
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+xbl wizard windows yourself
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+These results look more promising, although the quality of the answers to
+ some queries is still disappointing.
+ 
+\end_layout
+
+\begin_layout Subsection
+Final results & post-processing
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Post­process your result data such that it can be easily presented and interpret
+ed.  This might involve making a graph, a pie chart or some other visualization o
+f the data; alternatively,  it might involve a small (web­based) application tha
+t accesses or uses your results.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We have created a ‘search engine’ to browse the results that the 
+\noun on
+Traitor
+\noun default
+ Hadoop-program produces.
+ An instance is running at 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://evilgeniuses.ophanus.net/
+\end_layout
+
+\end_inset
+
+.
+ Javadoc is published at 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://evilgeniuses.ophanus.net/doc/
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Test queries.
+\end_layout
+
+\begin_layout Standard
+Using the full cluster data set, our test queries yields the following results:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="3">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="15text%">
+<column alignment="right" valignment="top" width="10text%">
+<column alignment="left" valignment="top" width="65text%">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Query
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+# Results
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Top results
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+microsoft
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6561
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+windows office software server word support services
+\series bold
+ 
+\series default
+search product internet system
+\series bold
+ 
+\series default
+excel
+\series bold
+ 
+\series default
+words perform google explorer outlook
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+gates -jobs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8857
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+melinda wrought driveway fences wooden heaven pearly sliding enemy buffett
+ flood railings thy
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+twente
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+70
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+fc dutch football england domestic mcclarens manager huge outfit middlesbrough
+ impressive successes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+java -php
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4297
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+applet(s) alden jvm coffee marketplace east concentration flashcards servlet
+ indonesia central instructor
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+wii -xbox
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3263
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+balance kart nunchuk resort motionplus mote zelda nunchuck exercise bros
+ workout unlocking
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We approve of these results.
+ Most associations seem quite sensible, but notice how the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+gates -jobs
+\end_layout
+
+\end_inset
+
+ query may seem quite nonsensical at first.
+ Once one considers that 
+\noun on
+Traitor
+\noun default
+ does not distinguish between 
+\emph on
+physical
+\emph default
+ gates versus 
+\noun on
+Bill Gates
+\noun default
+ (and 
+\emph on
+economical
+\emph default
+ jobs versus 
+\noun on
+Steve Jobs
+\noun default
+), the results may make more sense.
+ (Note: the first three results for the query 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+bill gates - (steve jobs)
+\end_layout
+
+\end_inset
+
+ are 
+\emph on
+melinda paying billion
+\emph default
+.)
+\end_layout
+
+\begin_layout Subsection
+Report
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+The report (draft version!) on our Norvig Award Common Crawls' Challenge
+ submission is contained in the other PDF file.
+\end_layout
+
+\begin_layout Section
+\start_of_appendix
+
+\noun on
+Traitor
+\noun default
+ architecture documentation
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Traitor-architecture-documentation"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+The following documentation is identical to package 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
+nl.utwente.evilgeniuses.traitor
+\end_layout
+
+\end_inset
+
+'s Javadoc (bar hyperlinks).
+\end_layout
+
+\begin_layout Standard
+The "Traitor" Hadoop program counts (non-trivial) pair-wise co-occurrences
+ of words in English sentences.
+ The co-occurrence of a pair of words is supposed to indicate a `relation'
+ between the words.
+ A separate interactive application will use these relations to visualize
+ concepts and their mutual similarities and differences.
+\end_layout
+
+\begin_layout Subsection
+Mapper
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+TraitorMapper
+\end_layout
+
+\end_inset
+
+ processes HTML documents as follows:
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Raw HTML
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+  ↓ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+DocumentExtractor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Plain text document with sentences
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+  ↓ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+WordExtractor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+List of non-trivial words (per sentence)
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+  ↓ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+PairFinder
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Tuples (word pair, 1) are emitted to the reducer
+\end_layout
+
+\begin_layout Subsubsection
+Extracting Sentences
+\end_layout
+
+\begin_layout Standard
+Sentences are retrieved from documents on the World Wide Web.
+ The input data is crudely filtered to improve the reliability of the results,
+ at the risk of ignoring usable input unnecessarily.
+ This pre-processing entails:
+\end_layout
+
+\begin_layout Itemize
+Documents are split into sentences by a simple regular expression that matches
+ on punctuation marks and formatting characters (new line, tab etc.).
+\end_layout
+
+\begin_layout Itemize
+To ignore (computer program) source code, sentences that contain `
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+', `
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+@
+\end_layout
+
+\end_inset
+
+' or `
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+.
+\end_layout
+
+\end_inset
+
+'are skipped.
+\end_layout
+
+\begin_layout Itemize
+Non-ASCII-characters an are removed.
+\end_layout
+
+\begin_layout Itemize
+Non-alphabetic (non-apostrophe) characters are replaced by space.
+\end_layout
+
+\begin_layout Subsubsection
+Extracting Words
+\end_layout
+
+\begin_layout Standard
+From each 'valid' sentence in each document, 'valid' words are extracted.
+\end_layout
+
+\begin_layout Standard
+A 'valid' sentence contains at least one word from a predefined set of "characte
+ristically English words".
+ These words occur often in text and are mostly 'trivial' (e.g., "are", "in").
+ This constraint is supposed to guarantee that only English sentences are
+ processed.
+\end_layout
+
+\begin_layout Standard
+A 'valid' word...
+\end_layout
+
+\begin_layout Itemize
+Consists of 2 to 20 alphabetic characters; checked by regular expression.
+\end_layout
+
+\begin_layout Itemize
+Is not contained in a predefined "blacklist".
+ This blacklist contains most "characteristically English words", as these
+ are trivial.
+ This constraint is supposed to prevent uninteresting word pairs from dominating
+ the results.
+\end_layout
+
+\begin_layout Subsubsection
+Finding Pairs
+\end_layout
+
+\begin_layout Standard
+Given the extracted list of 'non-trivial' words in a sentence, we pair each
+ word to any word further in the sentence, provided:
+\end_layout
+
+\begin_layout Itemize
+The two words are unequal.
+\end_layout
+
+\begin_layout Itemize
+No more than 100 word pairs (per sentence) have been constructed.
+\end_layout
+
+\begin_layout Standard
+The pairs are contained in a set, such that duplicates (in one sentence)
+ are ignored.
+ A 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+WordPair
+\end_layout
+
+\end_inset
+
+ is constructed from two words; the 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+WordPair
+\end_layout
+
+\end_inset
+
+ denotes the 'smallest' (i.e., lexicographically earliest) word as its 'first'
+ word; the 'largest' word is its 'second' word.
+\end_layout
+
+\begin_layout Subsection
+Reducer
+\end_layout
+
+\begin_layout Standard
+The reducer processes tuples of the form (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+WordPair
+\end_layout
+
+\end_inset
+
+,
+\emph on
+count
+\emph default
+) by simply summing the counts.
+ The 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+LBoundedLongSumReducer
+\end_layout
+
+\end_inset
+
+ will not emit the resulting sum, if the sum is lower than a minimum of
+ 2.
+ By removing co-occurrences that occur only once, which are likely already
+ uninteresting, we drastically reduce bandwidth/storage requirements.
+ 
+\end_layout
+
+\end_body
+\end_document

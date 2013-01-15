@@ -1,0 +1,33 @@
+﻿ 0_RTCUIUD3 0_VJ568RI4 0_2DTUX47B
+
+
+@misc{drijfhouttraitor,
+	title = {Traitor Documentation},
+	url = {http://evilgeniuses.ophanus.net/doc/},
+	urldate = {2013-01-15},
+	author = {Drijfhout, Wanno and Wevers, Lesley and Jundt, Oliver},
+	howpublished = {http://evilgeniuses.ophanus.net/doc/},
+	file = {Overview:C:\Users\Wanno Drijfhout\AppData\Roaming\Mozilla\Firefox\Profiles\otpr5gvr.default\zotero\storage\CFNHNC6X\doc.html:text/html}
+}
+
+@misc{kohlschutterboilerpipe,
+	title = {boilerpipe},
+	shorttitle = {boilerpipe},
+	url = {http://code.google.com/p/boilerpipe/},
+	urldate = {2013-01-15},
+	journal = {boilerpipe - Boilerplate Removal and Fulltext Extraction from {HTML} pages},
+	author = {Kohlsch{\"u}tter, Christian},
+	howpublished = {http://code.google.com/p/boilerpipe/},
+	file = {boilerpipe - Boilerplate Removal and Fulltext Extraction from HTML pages - Google Project Hosting:C:\Users\Wanno Drijfhout\AppData\Roaming\Mozilla\Firefox\Profiles\otpr5gvr.default\zotero\storage\DVV4P65A\boilerpipe.html:text/html}
+}
+
+@misc{bostockd3js,
+	title = {D3.js},
+	shorttitle = {D3.js},
+	url = {http://d3js.org/},
+	urldate = {2013-01-15},
+	journal = {D3.js - Data-Driven Documents},
+	author = {Bostock, Michael},
+	howpublished = {http://d3js.org/},
+	file = {D3.js - Data-Driven Documents:C:\Users\Wanno Drijfhout\AppData\Roaming\Mozilla\Firefox\Profiles\otpr5gvr.default\zotero\storage\KTH7TJMF\d3js.org.html:text/html}
+}

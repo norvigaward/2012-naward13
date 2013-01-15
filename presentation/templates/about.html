@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% set active_page = "about" %}
+{% block title %}About{% endblock %}
+{% block content %}
+    <h3>About Traitor</h3>
+<p>
+What do <a href="/search?query=apple+samsung+microsoft+ibm">Apple, Samsung, Microsoft, IBM etc. have in common</a>, if anything? What does <a href="/search?query=java+-php">Java have that PHP does not have</a>? Which <a href="/search?query=lance+armstrong">extra terms could refine the search query</a> “<code>lance armstrong</code>”? What is the <a href="/search?query=food+%2B+games+%2B+and+%2B+shelter+%2B+are+%2B+just+%2B+as+%2B+important+%2B+as+%2B+health">context of a sentence</a>, such as “<i>Food, games and shelter are just as important as health</i>”? How can (animal) types be <a href="/visualize?query=horse+dog+fish+mouse+fly+chicken+cat+bear+bat+whale+fox+frog+deer+rabbit+seal+tiger+eagle+buffalo+spider+rat+shark+lion+butterfly+sheep+bee+wolf+goose+dove+pony+duck">organized in taxonomies</a>?
+</p><p>
+You may know the answers to these questions or know where to look for them - but can a computer answer these questions for you too? We suspect this could be the case if the computer had a data set of associated <i>concepts</i>. An example to illustrate why we have this suspicion: if we know that the concepts of the two companies Apple and Samsung are both frequently associated with the concept of a “phone”, we can conclude that “phone” is something they have in common.
+</p><p>
+Our idea is to test our suspicion with Traitor, a tool we developed that has a database of associated concepts and understands questions similar to our examples.
+</p>
+    <ul class="nav nav-list">
+      <li class="nav-header">Traitor resources</li>
+      <li><a href="/doc/">Javadoc for mapper</a></li>
+      <li><a href="/static/report.pdf">Report &quot;Traitor - Associating Concepts using the Web&quot;</a></li>
+      <li><a href="/static/source.zip">Source code for Traitor</a></li>
+      <li><a href="/static/pairs.db">The SQLite3 database with word pairs (huge!)</a></li>
+      <li><a href="https://github.com/norvigaward/naward13">GitHub repository</a></li>
+      <li class="nav-header">Other resources</li>
+      <li><a href="http://norvigaward.github.com/">Norvig Web Data Science Award</a></li>
+      <li><a href="http://www.utwente.nl/en/">University of Twente</a></li>
+    </ul>
+      
+{% endblock %}

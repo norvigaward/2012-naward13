@@ -1,0 +1,1186 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass scrartcl
+\begin_preamble
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
+\end_preamble
+\use_default_options true
+\begin_modules
+fixltx2e
+fix-cm
+logicalmkup
+enumitem
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\columnsep 0.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 2
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Associating the World Wide Web with 
+\noun on
+Traitor
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+See 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://evilgeniuses.ophanus.net
+\end_layout
+
+\end_inset
+
+ for a demo.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+\begin_inset Flex Noun
+status collapsed
+
+\begin_layout Plain Layout
+Lesley Wevers
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+(EWI-FMT)
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+and 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Noun
+status collapsed
+
+\begin_layout Plain Layout
+Oliver Jundt
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+(s0213500)
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+and 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Noun
+status collapsed
+
+\begin_layout Plain Layout
+Wanno Drijfhout
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+(s0166960)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+NO MORE THAN 2000 words!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Idea
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+introduce a real world problem that our idea solves
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+What do Apple and Samsung have in common? What makes cats so famous on the
+ internet? How are the world countries related? 
+\end_layout
+
+\begin_layout Standard
+If you try to answer these questions you would probably say something like
+ Apple and Samsung make phones, cats are cute and US and Iraq are related
+ in war.
+ How did you do that?
+\end_layout
+
+\begin_layout Standard
+If you think about it you will notice that we often describe a concept in
+ terms of other associated concepts.
+ Usually these other associated concepts are called properties, characteristics
+ or traits.
+ We also use these traits to compare, group and distinguish concepts.
+ 
+\end_layout
+
+\begin_layout Standard
+Based on this observation we came up with the idea to use the Common Crawl
+ dataset to build 
+\noun on
+Traitor
+\noun default
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+We were looking for a name that elegantly captures the trait idea and at
+ the same time has some evil touch such that it matches our group name 
+\noun on
+Evil Geniuses
+\noun default
+.
+ We believe that we found it with 
+\noun on
+Traitor.
+\end_layout
+
+\end_inset
+
+, a database of related concepts.
+ Beside answering our questions from the beginning 
+\noun on
+Traitor
+\noun default
+ could be useful for a number of application scenarios.
+ It could be used in a recommendation system to help people find related
+ search terms.
+ It could help in natural language processing to find the context of words
+ and to distinguish words from different contexts.
+ And last but not least it could help build taxonomies for a variety of
+ fields like biology, economy and geology.
+\end_layout
+
+\begin_layout Section
+Method
+\end_layout
+
+\begin_layout Standard
+We follow the following approach to find related concepts.
+ Many people have published documents on the World Wide Web (as HTML-pages).
+ Properly structured documents contain sentences.
+ We assume each sentence meaningfully associates two or more concepts in
+ some fashion.
+ Given the amount and diversity of documents (and sentences therein) on
+ the web, the number of associations between concepts must be tremendous.
+ 
+\noun on
+Traitor
+\noun default
+ exploits this opportunity in two steps.
+\end_layout
+
+\begin_layout Subsection
+Step 1: Map-Reduce
+\end_layout
+
+\begin_layout Standard
+We have implemented a map-reduce program in 
+\noun on
+Java
+\noun default
+ for 
+\noun on
+Hadoop
+\noun default
+.
+ This program runs on SARA's computer cluster, processing 25TB
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+als alles lukt
+\end_layout
+
+\end_inset
+
+ of web pages.
+\end_layout
+
+\begin_layout Paragraph
+Mapper.
+\end_layout
+
+\begin_layout Standard
+In a few steps our mapper transforms the raw HTML pages to a list of tuples
+ 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(w_{1},w_{2},c\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ where 
+\begin_inset Formula $w_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $w_{2}$
+\end_inset
+
+ denote words that co-occurred in some sentence in the page and 
+\begin_inset Formula $c=1$
+\end_inset
+
+.
+ These intermediate steps apply various filters and refinements, such as:
+ skipping source code; skipping non-English sentences; skipping uninteresting
+ words (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+and
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+are
+\end_layout
+
+\end_inset
+
+ etc.) etc.
+ (See 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:Traitor-mapper-workflow"
+
+\end_inset
+
+ or the Javadoc
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+See 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://evilgeniuses.ophanus.net/doc/
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ for more detail.) Note that, for the sake of simplicity, 
+\noun on
+Traitor
+\noun default
+ only supports concepts that are represented by a single word.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[node distance = 2cm, auto]
+\end_layout
+
+\begin_layout Plain Layout
+
+    % Place nodes
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+node [cloud] (Raw) {Raw HTML page};
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+node [block, below of=Raw, node distance=1.5cm] (DocumentExtractor) {Document
+ extraction};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [cloud, below of=DocumentExtractor, node distance=1.5cm] (Document)
+ {Document with sentences};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [block, below of=Document, node distance=1.5cm] (WordExtractor) {Word
+ extraction};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [cloud, below of=WordExtractor, node distance=1.5cm] (Words) {`Non-trivial'
+ words (per sentence)};
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [block, below of=Words, node distance=1.5cm] (PairFinder) {Word pair
+ finding};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+node [cloud, below of=PairFinder, node distance=1.5cm] (Tuples) {Tuples (
+\backslash
+texttt{wordA}, 
+\backslash
+texttt{wordB}, 1)};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+path [line,dashed] (Raw) -- (DocumentExtractor);
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+path [line,dashed] (DocumentExtractor) -- (Document);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+path [line,dashed] (Document) -- (WordExtractor);
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+path [line,dashed] (WordExtractor) -- (Words);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+path [line,dashed] (Words) -- (PairFinder);
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+path [line,dashed] (PairFinder) -- (Tuples);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+node [cloud, right of=init] (system) {system};
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+node [block, below of=init] (identify) {identify candidate models};
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+node [block, below of=identify] (evaluate) {evaluate candidate models};
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+node [block, left of=evaluate, node distance=3cm] (update) {update model};
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+node [decision, below of=evaluate] (decide) {is best candidate better?};
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+node [block, below of=decide, node distance=3cm] (stop) {stop};
+\end_layout
+
+\begin_layout Plain Layout
+
+    % Draw edges
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+path [line] (init) -- (identify);
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+path [line] (identify) -- (evaluate);
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+path [line] (evaluate) -- (decide);
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+path [line] (decide) -| node [near start] {yes} (update);
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+path [line] (update) |- (identify);
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+path [line] (decide) -- node {no}(stop);
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+path [line,dashed] (expert) -- (init);
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+path [line,dashed] (system) -- (init);
+\end_layout
+
+\begin_layout Plain Layout
+
+    %
+\backslash
+path [line,dashed] (system) |- (evaluate);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Description of the 
+\noun on
+Traitor
+\noun default
+ mapper workflow.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Traitor-mapper-workflow"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Reducer.
+\end_layout
+
+\begin_layout Standard
+Our reducer sums the counts (the 
+\begin_inset Formula $c$
+\end_inset
+
+ in 
+\begin_inset Formula $\left(w_{1},w_{2},c\right)$
+\end_inset
+
+), although no output is produced for word pairs if 
+\begin_inset Formula $c<2$
+\end_inset
+
+.
+ We assume
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+bewijsbaar? jup, met een histogram of all pair counts.
+ verwacht resultaat als zipf klopt: grote bars voor lage counts en kleine
+ bar voor hoge counts
+\end_layout
+
+\end_inset
+
+ word pairs are Zipf-distributed.
+ Consequently, there is a long tail of rarely occurring word pairs.
+ For the mentioned application scenarios only the most occurring pairs (and
+ thus, more reliable) word pairs are interesting.
+ The limit of 
+\begin_inset Formula $2$
+\end_inset
+
+ is somewhat arbitrary and likely depends on the size of the data set.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Histogram zou hierbij ook kunnen helpen om deze keuze minder arbitrair te
+ maken
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Step 2: Presentation
+\end_layout
+
+\begin_layout Standard
+We import the tuples that result from the map-reduce step into a SQLite3-databas
+e.
+ We have built a web application using 
+\noun on
+CherryPy
+\noun default
+ and 
+\noun on
+Jinja2
+\noun default
+ as a front-end to this database for users.
+ There exist two user interfaces to access the database.
+\end_layout
+
+\begin_layout Paragraph
+Trait search with set notation
+\end_layout
+
+\begin_layout Standard
+A textual interface search allows users to search the database for words
+ (i.e., traits) that are associated with the words (i.e., concepts) in a query
+ expression.
+ In addition to finding the traits of a single concept, the user can also
+ apply set operations to find common and distinct sets of traits for multiple
+ concepts.
+\end_layout
+
+\begin_layout Standard
+Users can enter a ‘word expression’ as search query, similar to Boolean
+ expressions.
+ These expressions are then evaluated against the set of word pairs in the
+ database.
+ A sequence of words, separated by spaces, denotes the conjunction/intersection
+ and yields the words that are associated with 
+\emph on
+all
+\emph default
+ words in the sequence.
+ A sequence of words, separated by pipes, denotes the disjunction/union
+ and yields the words that are associated with 
+\emph on
+any
+\emph default
+ word in the sequence.
+ Words, preceded by a minus-symbol, denote the negation/complement.
+ For example: 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+(a | b) -c
+\end_layout
+
+\end_inset
+
+ would yield all words that are associated with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+b
+\end_layout
+
+\end_inset
+
+, 
+\emph on
+but not
+\emph default
+ with 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+c
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Visualizing concept relationships
+\end_layout
+
+\begin_layout Standard
+A graphical interface allows the user to visualize the relations between
+ multiple concepts in a 
+\emph on
+force directed graph
+\emph default
+ (using 
+\noun on
+D3.js
+\noun default
+).
+ 
+\end_layout
+
+\begin_layout Standard
+Users can enter a list of words (i.e., concepts) as search query.
+ These concepts are represented as labeled nodes in the graph.
+ The graphical size of the concept nodes indicate the number of traits (and
+ their count) the database for that node.
+ Large nodes have many associations; small nodes few.
+\end_layout
+
+\begin_layout Standard
+Links exist between concept nodes; their length indicates the ‘similarity’
+ of the associated concepts.
+ If two nodes are close to each other, the corresponding concepts have similar
+ traits.
+ Conversely, distant nodes and nodes without any link between them, have
+ very few (or none) traits in common and are (almost) unrelated.
+\end_layout
+
+\begin_layout Standard
+Internally, for each word (i.e., concept) in the query the system retrieves
+ the 50 most occurring traits (i.e., words associated with the concept).
+ For each pair of concepts, 
+\noun on
+Traitor 
+\noun default
+compares their list of top 50 traits and applies a metric
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+de metric noemen?
+\end_layout
+
+\end_inset
+
+ to estimate the ‘distance’ (i.e., similarity) between the trait lists.
+\end_layout
+
+\begin_layout Section
+Result
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+TODO: na uitvoering op totale cluster data.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Discussion
+\end_layout
+
+\begin_layout Paragraph
+Word alphabets.
+\end_layout
+
+\begin_layout Standard
+In our attempts to improve the quality of our results, earlier versions
+ of the 
+\noun on
+Traitor
+\noun default
+ map-reducer distinguished between the alphabet of two words.
+ For example: 
+\noun on
+Traitor
+\noun default
+ would find word pairs 
+\begin_inset Formula $\left(w_{e},w_{t},c\right)$
+\end_inset
+
+ such that 
+\begin_inset Formula $w_{e}$
+\end_inset
+
+ was included in an ‘alphabet’ of company names (e.g., the Fortune 500) and
+ 
+\begin_inset Formula $w_{t}$
+\end_inset
+
+ in the ‘alphabet’ of English words (or adjectives).
+ The 
+\begin_inset Formula $w_{e}$
+\end_inset
+
+ was the 
+\emph on
+entity
+\emph default
+; 
+\begin_inset Formula $w_{t}$
+\end_inset
+
+ was some 
+\emph on
+trait
+\emph default
+ that was now associated with 
+\begin_inset Formula $w_{e}$
+\end_inset
+
+.
+ (Hence, 
+\begin_inset Quotes eld
+\end_inset
+
+Trait-or
+\begin_inset Quotes erd
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Standard
+Ultimately, we found such filtering should be moved to the presentation-step
+ of 
+\noun on
+Traitor
+\noun default
+; otherwise, we would have to process the data-set for each combination
+ of word alphabets separately.
+ This seemed wasteful, so we removed the distinction.
+\end_layout
+
+\begin_layout Paragraph
+Filtering nonsense.
+\end_layout
+
+\begin_layout Standard
+Not every substring from an HTML document separated by punctuation symbols
+ is a sentence.
+ We first extract the full text of HTML pages with 
+\noun on
+boilerpipe
+\noun default
+.
+ The resulting ‘plain text’ may still contain non-alphabetic ‘words’, source
+ code etc.
+ We chose to filter ‘aggressively’ and rely on the power of Big Data to
+ yield usable results.
+\end_layout
+
+\begin_layout Standard
+To ensure that 
+\noun on
+Traitor
+\noun default
+ indeed pairs 
+\emph on
+words
+\emph default
+ (rather than nonsensical alphanumeric strings), we chose to 
+\emph on
+only
+\emph default
+ process words in ‘probably English sentences’.
+ 
+\noun on
+Traitor
+\noun default
+ does not use a library to deduce the language of a sentence (or document),
+ although there are suitable libraries.
+ Instead, we check if the sentence contains at least one ‘typically English
+ word’ (a hard-coded list), such as 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+the
+\end_layout
+
+\end_inset
+
+.
+ 
+\noun on
+Traitor
+\noun default
+ does not form pairs with ‘commonly occurring words’: a hard-coded list
+ that includes most of the ‘typically English words’.
+ Words that co-occur with 
+\emph on
+many
+\emph default
+ other words are probably useless.
+\end_layout
+
+\begin_layout Standard
+These are crude heuristics to improve the quality of our data; we still
+ see words from foreign languages in our results (notably the German 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+der
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+die
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+das
+\end_layout
+
+\end_inset
+
+).
+ This is an opportunity for future improvement.
+\end_layout
+
+\begin_layout Paragraph
+Sentence-by-sentence.
+\end_layout
+
+\begin_layout Standard
+We only associate and pair words that occur in the same 
+\emph on
+sentence
+\emph default
+, rather than the same paragraph or document.
+ A technical argument for this choice, is to constrain the size.
+ Pairing every non-trivial word with every other is 
+\begin_inset Formula $O\left(n^{2}\right)$
+\end_inset
+
+.
+ In the scope of sentences (with probably between 5 and 15 non-trivial words),
+ the amount of tuples produced is manageable.
+ However, paragraphs and documents have too many words to process in the
+ same fashion.
+\end_layout
+
+\begin_layout Standard
+A logical argument for our choice depends on human language semantics.
+ If two words co-occur in the same 
+\emph on
+document
+\emph default
+, may we assume they are associated? How ‘reliable’ is this association,
+ compared to a pair of words that co-occur in the same 
+\emph on
+sentence
+\emph default
+? On the one hand, a document about some subject will not repeat that subject
+ in every sentence, while most sentences are associated with the subject.
+ On the other hand, this association may be indirect or weak.
+\end_layout
+
+\begin_layout Standard
+Persuaded by the technical constraints, we opted to associate words by 
+\emph on
+sentence
+\emph default
+.
+ However, pairing co-occurring words in other ‘semantic units’ would be
+ interesting future work.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+SEO pages? Bigrams? ambigous words like apple
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "sources"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

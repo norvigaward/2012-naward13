@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN" "http://www.w3.org/TR/2001/REC-MathML2-20010221/dtd/xhtml-math11-f.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="GENERATOR" content="LyX 2.0.5.1" />
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+<title>Associating Concepts from the Web with Traitor</title>
+
+<!-- Text Class Preamble -->
+<style type="text/css">
+div.toc {
+margin: 2em 0em;
+border-style: solid;
+border-width: 2px 0px;
+padding: 1em 0em;
+}
+div.tochead { font-size: x-large; font-weight: bold; }
+div.lyxtoc-0 {
+margin: 2em 0em 0em 0em;
+font-size: xx-large;
+font-weight: bold;
+}
+div.lyxtoc-1 {
+margin: 1em 0em 0em 0em;
+font-size: x-large;
+font-weight: bold;
+}
+div.lyxtoc-2 {
+margin: 0em 0em 0em 1em;
+font-size: large;
+font-weight: normal;
+}
+div.lyxtoc-3 { margin: 0em 0em 0em 0.5em; font-size: medium; }
+div.lyxtoc-4 { margin: 0em 0em 0em 0.5em; }
+div.lyxtoc-5 { margin: 0em 0em 0em 0.5em; }
+div.lyxtoc-6 { margin: 0em 0em 0em 0.5em; }
+a.tocentry {
+text-decoration: none;
+color: black;
+}
+a.tocentry:visited { color: black; }
+a.tocarrow {
+font-weight: bold;
+text-decoration: none;
+color: #909090;
+}
+a.tocarrow:visited { color: #C0C0C0; }
+</style>
+
+<!-- Preamble Snippets -->
+\AtBeginDocument{\providecommand\subref[1]{\ref{sub:#1}}}
+\AtBeginDocument{\providecommand\figref[1]{\ref{fig:#1}}}
+<style type="text/css">
+div.bibtexentry { margin-left: 2em; text-indent: -2em; }
+span.bibtexlabel:before{ content: "["; }
+span.bibtexlabel:after{ content: "] "; }
+</style>
+
+<!-- Layout-provided Styles -->
+<style type='text/css'>
+h1.title {
+font-family: sans-serif;
+font-weight: bold;
+font-size: x-large;
+margin-bottom: 1ex;
+text-align: center;
+
+}
+div.author {
+font-size: x-large;
+margin-top: 1.3ex;
+margin-bottom: 0.7ex;
+text-align: center;
+
+}
+div.plain_layout {
+text-align: left;
+
+}
+div.publishers {
+font-size: x-large;
+margin-top: 1.3ex;
+margin-bottom: 0.7ex;
+text-align: center;
+
+}
+div.standard {
+text-indent: 2em;
+margin-bottom: 2ex;
+}
+h2.section {
+font-family: sans-serif;
+font-weight: bold;
+font-size: x-large;
+margin-top: 1.3ex;
+margin-bottom: 0.7ex;
+text-align: left;
+
+}
+h3.subsection {
+font-family: sans-serif;
+font-weight: bold;
+font-size: large;
+margin-top: 0.9ex;
+margin-bottom: 0.5ex;
+text-align: left;
+
+}
+ol.enumerate {
+margin-top: 0.7ex;
+margin-bottom: 0.7ex;
+margin-left: 3ex;
+text-align: left;
+
+}
+h4.subsubsection {
+font-family: sans-serif;
+font-weight: bold;
+font-size: medium;
+margin-top: 0.7ex;
+margin-bottom: 0.4ex;
+text-align: left;
+
+}
+span.noun {
+font-family: sans-serif;
+}
+code.flex_code {
+font-family: monospace;
+}
+span.foot_label {
+vertical-align: super;
+font-size: smaller;
+font-weight: bold;
+text-decoration: underline;
+}
+div.foot {
+display: inline;
+font-size: small;
+font-weight: medium;
+font-family: serif;
+font-variant: normal;
+font-style: normal;
+}
+div.foot_inner { display: none; }
+div.foot:hover div.foot_inner {
+display: block;
+border: 1px double black;
+margin: 0em 1em;
+padding: 1em;
+}
+span.flex_url {
+font-family: monospace;
+}
+div.float {
+border: 2px solid black;
+text-align: center;
+}
+div.preview {
+font-family: serif;
+font-weight: normal;
+font-style: normal;
+font-variant: normal;
+font-size: medium;
+}
+div.float-caption {
+text-align: center;
+border: 2px solid black;
+padding: 1ex;
+margin: 1ex;
+}
+</style>
+</head>
+<body>
+<h1 class="title"><a id='magicparlabel-3' />
+Associating Concepts from the Web with Traitor</h1>
+<div class="author"><a id='magicparlabel-1861' />
+<span class='noun'>Lesley Wevers</span>
+<br />
+
+<a href="l.wevers@utwente.nl">l.wevers@utwente.nl</a><span class='noun'>Oliver Jundt</span>
+<br />
+
+<a href="s0213500@student.utwente.nl">s0213500@student.utwente.nl</a><span class='noun'>Wanno Drijfhout</span>
+<br />
+
+<a href="s0166960@student.utwente.nl">s0166960@student.utwente.nl</a></div>
+<div class="publishers"><a id='magicparlabel-863' />
+University of Twente</div>
+<div class="standard"><a id='magicparlabel-33' />
+</div>
+<h2 class="section"><span class="section_label">1</span> <a id='magicparlabel-38' />
+Idea</h2>
+<div class="standard"><a id='magicparlabel-43' />
+What do Apple, Samsung, Microsoft, IBM etc. have in common, if anything? What does Java have that PHP does not have? Which extra terms could refine the search query “<code class="flex_code">lance armstrong</code>”? What is the context of a sentence, such as “<em>Food, games and shelter are just as important as health</em>”? How can (animal) types be organized in taxonomies?</div>
+
+<div class="standard"><a id='magicparlabel-231' />
+You may know the answers to these questions or know where to look for them - but can a computer answer these questions for you too? We suspect this could be the case if the computer had a data set of associated <em>concepts</em>. An example to illustrate why we have this suspicion: if we know that the concepts of the two companies Apple and Samsung are both frequently associated with the concept of a “phone”, we can conclude that “phone” is something they have in common.</div>
+
+<div class="standard"><a id='magicparlabel-433' />
+Our idea is to test our suspicion with Traitor<div class="foot"><span class="foot_label">1</span><div class="foot_inner"><div class="plain_layout"><a id='magicparlabel-477' />
+See <span class="flex_url">http://evilgeniuses.ophanus.net</span> for a demo.</div>
+</div></div>, a tool we developed that has a database of associated concepts and understands questions similar to our examples.</div>
+
+<div class="standard"><a id='magicparlabel-45' />
+</div>
+<h2 class="section"><span class="section_label">2</span> <a id='magicparlabel-2666' />
+Method</h2>
+<div class="standard"><a id='magicparlabel-2668' />
+In the following we describe how the two essential parts of Traitor, the association database and query interfaces, were created and work.</div>
+<h3 class="subsection"><span class="subsection_label">2.1</span> <a id='magicparlabel-2682' />
+Part 1: Associated Concepts</h3>
+<div class="standard"><a id='magicparlabel-2722' />
+To extract associated concepts from the Common Crawl data set, we have implemented a map-reduce program in Java for Hadoop. This program runs on SARA’s Hadoop cluster and processes 25TB of web pages. The program depends on two assumptions we make:</div>
+
+<ol class="enumerate"><li class="enumerate_item"><a id='magicparlabel-2692' />
+A word represents a concept;</li>
+<li class="enumerate_item"><a id='magicparlabel-2947' />
+If two words co-occur in a sentence, the concepts they represent are associated by humans.</li>
+</ol>
+<div class="standard"><a id='magicparlabel-2693' />
+As we will discuss later (see <a href="#sub_Ambiguous_words">Section 4.1</a>), assumption 1 has only a limited validity. </div>
+<h4 class="subsubsection"><span class="subsubsection_label">2.1.1</span> <a id='magicparlabel-2955' />
+Mapper</h4>
+<div class="standard"><a id='magicparlabel-3101' />
+In a few steps (see <a href="#fig_Traitor_mapper_workflow">1</a> or Javadoc[<a href='#drijfhouttraitor'>2</a>]) our mapper transforms the raw HTML responses from the Common Crawl data set to a list of key value pairs <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+  <mrow><mi>k</mi><mo>,</mo><mi>v</mi>
+  </mrow><mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+ </mrow></math>, where the key <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>k</mi>
+ </mrow></math> is a word pair <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+  <mrow>
+   <msub>
+    <mrow><mi>w</mi>
+    </mrow>
+    <mrow><mn>1</mn>
+    </mrow>
+   </msub><mo>,</mo>
+   <msub>
+    <mrow><mi>w</mi>
+    </mrow>
+    <mrow><mn>2</mn>
+    </mrow>
+   </msub>
+  </mrow><mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+ </mrow></math> that co-occurred in some sentence on the page, and the value <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>v</mi>
+ </mrow></math> denotes the number of pages on which this co-occurrence has been found. We consider the ‘count’ of co-occurring word pairs as a measure of the association’s <em>strength</em>. </div>
+
+<div class="standard"><a id='magicparlabel-3098' />
+In sequence, the Traitor mapper performs the following steps:</div>
+
+<ol class="enumerate"><li class="enumerate_item"><a id='magicparlabel-3115' />
+discard documents that are not HTML-formatted or do not have status code 200 (OK);</li>
+<li class="enumerate_item"><a id='magicparlabel-3117' />
+extract plain text content from the HTML page using the BoilerPipe[<a href='#kohlschutterboilerpipe'>3</a>] library;</li>
+<li class="enumerate_item"><a id='magicparlabel-3118' />
+split the plain text into sentences using a regular expression;</li>
+<li class="enumerate_item"><a id='magicparlabel-3119' />
+discard sentences containing source code;</li>
+<li class="enumerate_item"><a id='magicparlabel-3120' />
+discard non-alphabetic tokens from sentences, such as numbers<div class="foot"><span class="foot_label">2</span><div class="foot_inner"><div class="plain_layout"><a id='magicparlabel-3198' />
+Consequently, Traitor does not process years, product model numbers and IDs etc.</div>
+</div></div></li>
+<li class="enumerate_item"><a id='magicparlabel-3121' />
+discard sentences that are “probably” not English<div class="foot"><span class="foot_label">3</span><div class="foot_inner"><div class="plain_layout"><a id='magicparlabel-3221' />
+The heuristic to determine whether a sentence is English, is rather crude and imprecise: we check if a sentence contains at least two ‘common typically English words’.</div>
+</div></div></li>
+<li class="enumerate_item"><a id='magicparlabel-3122' />
+count each distinct co-occurring word pair in the page’s sentences once and emit the tuple <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+  <mrow>
+   <msub>
+    <mrow><mi>w</mi>
+    </mrow>
+    <mrow><mn>1</mn>
+    </mrow>
+   </msub><mo>,</mo>
+   <msub>
+    <mrow><mi>w</mi>
+    </mrow>
+    <mrow><mn>2</mn>
+    </mrow>
+   </msub><mo>,</mo><mn>1</mn>
+  </mrow><mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+ </mrow></math> such that <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow><mi>w</mi>
+    </mrow>
+    <mrow><mn>1</mn>
+    </mrow>
+   </msub><mo> &le; </mo>
+   <msub>
+    <mrow><mi>w</mi>
+    </mrow>
+    <mrow><mn>2</mn>
+    </mrow>
+   </msub>
+  </mrow>
+ </mrow></math> (lexicographically).</li>
+</ol>
+<div class="standard"><a id='magicparlabel-3788' />
+</div>
+<div class='float float-figure'><div class="plain_layout" style='text-align: center;'><a id='magicparlabel-3785' />
+<div class="preview"><div class="standard"><a id='magicparlabel-3784' />
+</div>
+</div></div>
+
+<div class="plain_layout"><a id='magicparlabel-3787' />
+<div class='float-caption float-caption-figure'>Figure 1:<div class="plain_layout"><a id='magicparlabel-3786' />
+Description of the Traitor mapper workflow.<a id="fig_Traitor_mapper_workflow" />
+</div>
+</div></div>
+</div>
+
+
+<div class="standard"><a id='magicparlabel-3833' />
+We have chosen sentences as the semantic unit (rather than the same paragraph or document) for generating word pairs for two reasons. A technical reason is to constrain the result size. Pairing every non-trivial word with every other is <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>O</mi><mo>&af;</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+  <msup>
+   <mrow><mi>n</mi>
+   </mrow>
+   <mrow><mn>2</mn>
+   </mrow>
+  </msup><mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+ </mrow></math>. A logical reason is based on human language semantics. We assume that word co-occurrences within a sentence are more likely to represent actual associations than co-occurrences of words that are spread over a whole document. </div>
+<h4 class="subsubsection"><span class="subsubsection_label">2.1.2</span> <a id='magicparlabel-3970' />
+Reducer</h4>
+<div class="standard"><a id='magicparlabel-3974' />
+In the reduction phase we sum the counts of the word pairs produced by the mapper. Because the distribution of word pairs follows a Zipf distribution (see <a href="#fig_Histogram">2</a>), we find that the majority of the resulting pairs have a very low count. To reduce storage cost of the final output, we can discard pairs with a count less than some <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>N</mi>
+ </mrow></math>; e.g. if <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>N</mi><mo>=</mo><mn>2</mn>
+  </mrow>
+ </mrow></math>, we discard all pairs that only occur once. Essentially, this allows us to reduce the output to any size that we can handle in the presentation layer. Unfortunately, pairs with rare words are cut indiscriminately due to this policy, even if these co-occurring words are still usable associations.</div>
+
+<div class="standard"><a id='magicparlabel-4739' />
+</div>
+<div class='float float-figure'><div class="plain_layout" style='text-align: center;'><a id='magicparlabel-4740' />
+<img style='width:100%;' src='1C__Users_Wanno_Drijfhout_Studie_2012-2013_CS-S___geniuses-repo_report_histogram-cluster-full.png' alt='image: 1C__Users_Wanno_Drijfhout_Studie_2012-2013_CS-S___geniuses-repo_report_histogram-cluster-full.png' />
+</div>
+
+<div class="plain_layout"><a id='magicparlabel-4742' />
+<div class='float-caption float-caption-figure'>Figure 2:<div class="plain_layout"><a id='magicparlabel-4744' />
+Histogram of word pair occurrences in the data set. Rare word pair occurrences (fewer than <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>N</mi><mo>=</mo><mn>100</mn>
+  </mrow>
+ </mrow></math> times) are excluded.<a id="fig_Histogram" />
+</div>
+</div></div>
+</div>
+
+<h3 class="subsection"><span class="subsection_label">2.2</span> <a id='magicparlabel-4187' />
+Part 2: Query Interfaces</h3>
+<div class="standard"><a id='magicparlabel-4199' />
+The resulting tuples from the map-reduce step are imported into a SQLite3-database. As a front-end to this database we have built a web application with two query interfaces using CherryPy and Jinja2.</div>
+<h4 class="subsubsection"><span class="subsubsection_label">2.2.1</span> <a id='magicparlabel-4201' />
+Association search with set notation</h4>
+<div class="standard"><a id='magicparlabel-4227' />
+Users can enter search queries, similar to set notation, to do tasks like finding similarities and differences between two concepts.</div>
+
+<div class="standard"><a id='magicparlabel-4202' />
+A sequence of words, separated by spaces, denotes the conjunction/intersection and yields the words that are associated with all words in the sequence. A sequence of words, separated by plus-symbols, denotes the disjunction/union and yields the words that are associated with any word in the sequence. Words, preceded by a minus-symbol, denote the negation/complement.</div>
+
+<div class="standard"><a id='magicparlabel-4203' />
+To illustrate: the query <code class="flex_code">(a + b) -c</code> would yield all words that are associated with <code class="flex_code">a</code> <em>or</em> <code class="flex_code">b</code>, <em>and not</em> with <code class="flex_code">c</code>.</div>
+<h4 class="subsubsection"><span class="subsubsection_label">2.2.2</span> <a id='magicparlabel-4204' />
+Visualizing similarity relationships of concepts </h4>
+<div class="standard"><a id='magicparlabel-4558' />
+A graphical interface allows users to visualize similarity relationships of concepts in a <em>force directed graph</em> using D3.js[<a href='#bostockd3js'>1</a>].</div>
+
+<div class="standard"><a id='magicparlabel-4205' />
+Users can enter a list of words which become labeled nodes in the graph. The graphical size of the nodes indicates how many associations a concept has. The more associations a concept has, the bigger is the node.</div>
+
+<div class="standard"><a id='magicparlabel-4206' />
+For each word in the query the system retrieves the 50 most strongly related concepts. One could interpret this top 50 ranked list as an estimate of the concept’s context.</div>
+
+<div class="standard"><a id='magicparlabel-4583' />
+For each word pair we apply the RBO metric[<a href='#webber2010asimilarity'>4</a>] to estimate the similarity. A link is created between two nodes if the similarity is more than 5%. The length and thickness of the link indicate the similarity. If two nodes are connected by a short thick line the corresponding concepts share a very similar top 50 ranking. Conversely, distant nodes and nodes without any link between them have very few (or no) concepts in common.</div>
+<h2 class="section"><span class="section_label">3</span> <a id='magicparlabel-180' />
+Result</h2>
+<div class="standard"><a id='magicparlabel-7136' />
+In the following we try to assess the quality of the Traitor’s query results to our introductory questions and additional samples. The association database that we used for the query results contains over 43 million extracted distinct word pairs.</div>
+<h3 class="subsection"><span class="subsection_label">3.1</span> <a id='magicparlabel-7150' />
+Commonalities and recommending extra search query terms</h3>
+<div class="standard"><a id='magicparlabel-8178' />
+The first question from the introduction translates in Traitor to &ldquo;<code class="flex_code">apple samsung microsoft ibm</code>” (i.e, what do those companies have in common?) and yields as top ranked concepts: <em>software</em>, <em>windows</em>, <em>system</em>, <em>mobile</em>, <em>computer</em> etc. This is a reasonable result.</div>
+
+<div class="standard"><a id='magicparlabel-7170' />
+Recommending extra search query terms is a similar to finding commonalities. For the query “<code class="flex_code">lance armstrong</code>”, Traitor returns <em>tour</em>, <em>cancer</em>, <em>france</em>, <em>foundation</em>, <em>team</em> and (further down) <em>livestrong</em>, <em>race</em>, <em>cycling</em> and <em>yellow</em>. These are rather good results compared to Google Trends and allow the user to narrow down on a particular aspect of “<code class="flex_code">lance armstrong</code>”, such as “<code class="flex_code">cancer</code>”, eventually reaching <em>foundation</em> via “<code class="flex_code">lance armstrong cancer</code>”.</div>
+
+<div class="standard"><a id='magicparlabel-7166' />
+Other queries of this type have results of varying quality, such as “<code class="flex_code">amber alert</code>” (yields <em>red</em> but also <em>girl</em> and <em>issued</em>, later on), “<code class="flex_code">political party</code>” (yields <em>information</em> but also <em>democratic</em> and <em>republican</em>), “<code class="flex_code">vehicle</code>” (yields <em>car</em>, <em>motor</em>, <em>insurance</em> etc.) and “<code class="flex_code">music</code>” (yields <em>video</em>, <em>live</em>, <em>download</em>, <em>world</em>, <em>play</em> etc.). We reckon that names and categories (like “<code class="flex_code">music</code>”) generally yield better result than elements thereof (“<code class="flex_code">blues music</code>” yields <em>rock</em>, <em>band</em>).</div>
+<h3 class="subsection"><span class="subsection_label">3.2</span> <a id='magicparlabel-8121' />
+Differences</h3>
+<div class="standard"><a id='magicparlabel-8272' />
+The second question from the introduction translates to “<code class="flex_code">java -php</code>” (i.e., what associations does Java have that PHP does not?). The results are interesting: <em>applet(s)</em>, <em>alden</em>, <em>jvm</em>, <em>coffee</em>, <em>marketplace</em>, <em>east</em>, <em>concentration</em>, <em>flashcards</em>, <em>servlet</em>, <em>indonesia</em> etc. Some results are associated with the Java programming language (but not PHP!), the Java coffee brand and the Java island (East-Java).</div>
+
+<div class="standard"><a id='magicparlabel-8378' />
+If we extend the query to “<code class="flex_code">java coffee -php</code>”, results include <em>cup</em>, <em>bean(s)</em>, <em>tea</em>, <em>espresso</em> etc. These results are reasonable answers to the query “concepts that are associated with Java and coffee but not PHP”.</div>
+
+<div class="standard"><a id='magicparlabel-8141' />
+Other queries have results of varying quality; e.g., “<code class="flex_code">wii -xbox</code>” (contains <em>balance</em>, <em>kart</em>, <em>nunchu(c)k</em>) is good; “<code class="flex_code">gates -jobs</code>” (contains <em>melinda</em> as well as <em>wrought</em>, <em>driveway</em>), “<code class="flex_code">twente -holland</code>” (contains <em>fc</em>, <em>mcclarens</em>, <em>enschede</em> as well as <em>domestic</em>, <em>huge</em>) slightly worse. We reckon more words that are both commonly used and unambiguous (e.g., Wii) yield better results.</div>
+<h3 class="subsection"><span class="subsection_label">3.3</span> <a id='magicparlabel-8659' />
+Deducing contexts of sentences</h3>
+<div class="standard"><a id='magicparlabel-8661' />
+The association search interface can also be used for deducing contexts of sentences. For example, the query “<code class="flex_code">food + games + and + shelter + are + just + as + important + as + health</code>” produces the union of each word’s associations: <em>care</em>, <em>insurance</em>, <em>information</em>, <em>play</em>, <em>good</em>. Taking the union<div class="foot"><span class="foot_label">4</span><div class="foot_inner"><div class="plain_layout"><a id='magicparlabel-8890' />
+The intersection would determine the words that are associated by all words in the sentence with the consequence that, if only one word is out of context, the resulting set of associations would be empty.</div>
+</div></div> corresponds to the intuition that each word contributes extra meaning to the sentence.</div>
+
+<div class="standard"><a id='magicparlabel-8662' />
+For another query “<code class="flex_code">haskell + is + better + than + python + or + java</code>” Traitor yields reasonable results too: <em>code</em>, <em>language</em>, <em>application(s)</em>, <em>programming</em>, <em>software</em>.</div>
+
+<div class="standard"><a id='magicparlabel-8663' />
+Each word has its own associations. For any such association to emerge as ‘context’ of the entire sentence, the association must be very strong for either that single word, or for multiple words combined. We reckon the strongest associations describe the context of the sentence best. </div>
+<h3 class="subsection"><span class="subsection_label">3.4</span> <a id='magicparlabel-9132' />
+Taxonomies</h3>
+<div class="standard"><a id='magicparlabel-9134' />
+For finding taxonomies, we created the visualization interface. This type of question seems to be the most complex one with widely varying quality of results. For the introduction example of animals (see <a href="#fig_Visualizing_animals">a</a>) the visualization is little insightful. However, the visualization of a set of brands (see <a href="#fig_Visualizing_brands">b</a>) illustrates the economic ties (e.g., competitors, similar sectors) between the brands quite well. The visualization of various countries (see <a href="#fig_Visualizing_countries">c</a>) resembles geographical, economic or historical relationships between them, but it requires knowledge of the user to guess what the visible clusters actually mean.</div>
+
+<div class="standard"><a id='magicparlabel-9135' />
+We reckon the set of brands is well-visualized because brands are often compared and reviewed on the web (e.g., product reviews, news reports) and each brand has both similarities and differences with other elements (e.g., Google and Microsoft are more alike than Microsoft and McDonalds).</div>
+
+<div class="standard"><a id='magicparlabel-9374' />
+</div>
+<div class='float float-figure'><div class="plain_layout"><a id='magicparlabel-9375' />
+</div>
+<div class='float float-figure'><div class="plain_layout"><a id='magicparlabel-9412' />
+<img style=' height:30%;' src='2C__Users_Wanno_Drijfhout_Studie_2012-2013_CS-S___lgeniuses-repo_report_visualization-animals.png' alt='image: 2C__Users_Wanno_Drijfhout_Studie_2012-2013_CS-S___lgeniuses-repo_report_visualization-animals.png' />
+</div>
+
+<div class="plain_layout"><a id='magicparlabel-9609' />
+<div class='float-caption float-caption-figure'>Sub-Figure a:<div class="plain_layout"><a id='magicparlabel-9608' />
+Visualizing 30 animals.<a id="fig_Visualizing_animals" />
+</div>
+</div></div>
+</div>
+
+
+<div class="plain_layout"><a id='magicparlabel-9799' />
+</div>
+<div class='float float-figure'><div class="plain_layout"><a id='magicparlabel-9623' />
+<img style=' height:30%;' src='3C__Users_Wanno_Drijfhout_Studie_2012-2013_CS-S___ilgeniuses-repo_report_visualization-brands.png' alt='image: 3C__Users_Wanno_Drijfhout_Studie_2012-2013_CS-S___ilgeniuses-repo_report_visualization-brands.png' />
+</div>
+
+<div class="plain_layout"><a id='magicparlabel-9625' />
+<div class='float-caption float-caption-figure'>Sub-Figure b:<div class="plain_layout"><a id='magicparlabel-9624' />
+Visualizing 28 brands.<a id="fig_Visualizing_brands" />
+</div>
+</div></div>
+</div>
+
+
+<div class="plain_layout"><a id='magicparlabel-9807' />
+</div>
+<div class='float float-figure'><div class="plain_layout"><a id='magicparlabel-9445' />
+<img style=' height:30%;' src='4C__Users_Wanno_Drijfhout_Studie_2012-2013_CS-S___eniuses-repo_report_visualization-countries.png' alt='image: 4C__Users_Wanno_Drijfhout_Studie_2012-2013_CS-S___eniuses-repo_report_visualization-countries.png' />
+</div>
+
+<div class="plain_layout"><a id='magicparlabel-9453' />
+<div class='float-caption float-caption-figure'>Sub-Figure c:<div class="plain_layout"><a id='magicparlabel-9455' />
+Visualizing 30 countries.<a id="fig_Visualizing_countries" />
+</div>
+</div></div>
+</div>
+
+
+<div class="plain_layout"><a id='magicparlabel-9377' />
+<div class='float-caption float-caption-figure'>Figure 3:<div class="plain_layout"><a id='magicparlabel-9379' />
+Various demo visualizations<a id="fig_Visualizations" />
+</div>
+</div></div>
+</div>
+
+<h2 class="section"><span class="section_label">4</span> <a id='magicparlabel-186' />
+Conclusion &amp; Discussion</h2>
+<div class="standard"><a id='magicparlabel-10693' />
+Many of Traitor’s results are indeed reasonable and as expected. However, as already discussed in the previous chapter, we observed cases where this is not the case. If we take a closer look at what would improve the result quality for most of these cases, we find the following problems that have to be solved.</div>
+<h3 class="subsection"><span class="subsection_label">4.1</span> <a id='magicparlabel-214' />
+Ambiguous words<a id="sub_Ambiguous_words" />
+</h3>
+<div class="standard"><a id='magicparlabel-11111' />
+A weakness of Traitor is the assumption that each word corresponds to a single concept. Words often represent multiple concepts; e.g. “<code class="flex_code">apple</code>” refers to a company and a fruit. Traitor does not distinguish between different meanings of words and it consequently becomes very difficult to see which associations belong to which <em>meaning</em> in the query interfaces. In practice this is not a problem if there exists one dominant meaning of the word and the user is interested in exactly this meaning and only the most strongly associated concepts. Google Search has the same problem. If you search for &ldquo;<code class="flex_code">apple</code>&rdquo;, you will have to click trough several result pages to actually find something about the <em>fruit</em>, because the company Apple is used much more often on the web. However, as with Google, combining concepts in a query can help to achieve the wanted results (e.g. “<code class="flex_code">apple fruit</code>”).</div>
+<h3 class="subsection"><span class="subsection_label">4.2</span> <a id='magicparlabel-5707' />
+Only one word to describe concepts<a id="sub_Only_one_word" />
+</h3>
+<div class="standard"><a id='magicparlabel-11206' />
+Another limitation of Traitor is that concepts can only be described (and identified) by single words. Sometimes, a proper concept description requires multiple words; e.g., “New York”. This is a hard problem. We considered extracting bigrams and trigrams from sentences, but that would have drastically increased the database size. We also considered using predefined lists of <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>n</mi>
+ </mrow></math>-grams that describe concepts, e.g. the Fortune 500 list of company names, but building a general and complete <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>n</mi>
+ </mrow></math>-gram database turned out to be project by itself. Time constraints forced us to accept this limitation.</div>
+
+<div class="standard"><a id='magicparlabel-219' />
+<h2 class='bibtex'>References</h2><div class='bibtex'><div class='bibtexentry'><a id='LyXCite-bostockd3js' />
+<span class='bibtexlabel'>1</span><span class='bibtexinfo'>Bostock, Michael, "D3.js", <i>D3.js - Data-Driven Documents</i>.</span></div>
+<div class='bibtexentry'><a id='LyXCite-drijfhouttraitor' />
+<span class='bibtexlabel'>2</span><span class='bibtexinfo'>Drijfhout, Wanno and Wevers, Lesley and Jundt, Oliver, "Traitor Documentation".</span></div>
+<div class='bibtexentry'><a id='LyXCite-kohlschutterboilerpipe' />
+<span class='bibtexlabel'>3</span><span class='bibtexinfo'>Kohlschütter, Christian, "boilerpipe", <i>boilerpipe - Boilerplate Removal and Fulltext Extraction from HTML pages</i>.</span></div>
+<div class='bibtexentry'><a id='LyXCite-webber2010asimilarity' />
+<span class='bibtexlabel'>4</span><span class='bibtexinfo'>Webber, William and Moffat, Alistair and Zobel, Justin, "A similarity measure for indefinite rankings", <i>ACM Trans. Inf. Syst.</i> (2010), 20:1–20:38.</span></div>
+</div></div>
+</body>
+</html>

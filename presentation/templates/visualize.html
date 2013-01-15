@@ -1,0 +1,210 @@
+{% extends "base.html" %}
+{% set active_page = "visualize" %}
+{% block title %}Visualize{% endblock %}
+{% block style %}
+		.node {
+		  stroke: #fff;
+		  stroke-width: 1.5px;
+		  fill: #f60;
+		}
+
+		.link {
+		  stroke: #999;
+		  stroke-opacity: 0.3;
+		}
+{% endblock %}
+{% block content %}
+    <h3>Visualize associations</h3>
+    <div class="container" style="text-align: center">
+		<form action="visualize" method="get" class="form-search">
+		    <fieldset>
+			<div class="input-append">
+				<input class="input-xxlarge search-query" type="text" name="query" value="{{query}}" placeholder="Enter some words">
+				<button class="btn btn-primary" type="submit"><i class="icon-eye-open"></i> Visualize</button>
+			</div>
+		        {% if not query %}
+				<p class="help-block"><i class="icon-question-sign"></i> 
+					The query <a href="visualize?query=google+yahoo+microsoft"><code>google yahoo microsoft</code></a>
+					will generate a graph with 3 nodes.<br/>
+					The node sizes indicate the relative number of associations each word has.<br/>
+					If two words have more than 5% of their most strongly associated words in common, a link between them will be shown.<br/>
+					The more they have in common, the thicker the link and the smaller the distance between the nodes.<br/>
+					Query words can be omitted from the graph if there is insufficient data available about the word.
+				</p>
+			{% endif %}
+			<div class="container">
+				Examples:
+				<a href="visualize?query=google+microsoft+apple+amazon+hp+yahoo+samsung+disney+ibm+nokia+cisco+bmw+toyota+blackberry+honda+mercedes+nike+intel+oracle+verizon+amd+nvidia+walmart+cola+vodafone+pepsi+gillette+mcdonalds">Brands</a>
+				<a href="visualize?query=horse+dog+fish+mouse+fly+chicken+cat+bear+bat+whale+fox+frog+deer+rabbit+seal+tiger+eagle+buffalo+spider+rat+shark+lion+butterfly+sheep+bee+wolf+goose+dove+pony+duck">Animals</a>
+				<a href="visualize?query=uk+canada+australia+china+india+usa+israel+france+russia+mexico+iraq+japan+germany+italy+iran+ireland+spain+pakistan+afghanistan+thailand+turkey+singapore+brazil+egypt+croatia+vietnam+greece+switzerland+austria+netherlands">Countries</a>
+			</div>
+		    </fieldset>
+		</form>
+	</div> <!-- /container -->
+	{% if query %}
+		<div class="alert">
+			<strong>
+				Calculated {{ sizes|length }} nodes.
+		    	</strong>
+			Query for {% for term in query.split() %}<code>{{ term }}</code> {% endfor %} completed in {{ '%0.2f' % time }} seconds.
+		</div>
+	{% endif %}
+
+	{% if sizes != [] and rankings != [] %}
+		<script src="http://d3js.org/d3.v3.min.js"></script>
+		<div class="container">
+			<svg id="forcegraph"/>
+		</div>
+		<script>
+			var width = 960,
+				height = 500;
+			
+			var svg = d3.select("svg#forcegraph")
+				.attr("width", width)
+				.attr("height", height);
+
+			var force = d3.layout.force()
+				.size([width, height]);
+
+			graph = {
+			  "nodes":[
+				{% for (word, size) in sizes %}
+					{"name":"{{ word }}","size":{{ size }},"ranking": "{% for (trait) in rankings[word][0:20] %}{{ trait }}\n{% endfor %}" },
+				{% endfor %}
+			  ],
+			  "links":[
+				{% if link_distances != [] %}
+					{% for (word1, word2, dist) in link_distances %}
+						{"source":"{{ word1 }}","target":"{{ word2 }}","value":{{ dist }}},
+					{% endfor %}
+				{% endif %}
+			  ]
+			}
+
+			//update graph links by replacing node names with indexes
+			var findNode = function(name) {
+				for (var i in graph.nodes) {
+					if (graph.nodes[i].name === name) 
+						return graph.nodes[i]
+				};
+			}
+
+			for (var i in graph.links) {
+				graph.links[i].source = findNode(graph.links[i].source)
+				graph.links[i].target = findNode(graph.links[i].target)
+			}
+
+			var k = Math.sqrt(graph.nodes.length / (width * height));
+
+			force
+			  .nodes(graph.nodes)
+			  .links(graph.links)
+			  .linkDistance(function(d) { return d.value; })
+			  .charge(-10 / k)
+			  .gravity(75 * k)
+			  .start();
+
+			  var link = svg.selectAll("line.link")
+				  .data(graph.links)
+				  .enter().append("line")
+				  .attr("class", "link")
+				  .style("stroke-width", function(d) { return Math.sqrt(150 - d.value)/2.0; });
+
+			  var node = svg.selectAll("g.node")
+				  .data(graph.nodes)
+				  .enter().append("g")
+				  .call(force.drag);
+
+				node.append("circle")      
+					.attr("class", "node")
+					.attr("r", function(d) { return d.size; });
+
+			  node.append("title")
+				  .text(function(d) { return d.ranking; });
+				  
+			  node.append("text")
+				  .attr("dy", ".3em")
+				  .style("text-anchor", "middle")
+				  .text(function(d) { return d.name/*.substring(0, d.size / 3)*/; });
+
+			  force.on("tick", function() {
+				link.attr("x1", function(d) { return d.source.x; })
+					.attr("y1", function(d) { return d.source.y; })
+					.attr("x2", function(d) { return d.target.x; })
+					.attr("y2", function(d) { return d.target.y; });
+
+				node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+			  });
+		</script>
+	{% endif %}
+
+	{% if debug == 'y' %}
+	{% if link_distances != [] %}
+		<div class="container">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Word1</th>
+						<th>Word2</th>
+						<th>Distance</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for (word1, word2, dist) in link_distances %}
+						<tr>
+							<td>{{ word1 }}</td>
+							<td>{{ word2 }}</td>
+							<td>{{ dist }}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	{% endif %}
+
+	{% if sizes != [] %}
+		<div class="container">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Word</th>
+						<th>Size</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for (word, size) in sizes %}
+						<tr>
+							<td>{{ word }}</td>
+							<td>{{ size }}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	{% endif %}
+
+	{% if rankings != [] %}
+		<div class="container">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Word</th>
+						<th>Trait</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for (word) in rankings %}
+						{% for (trait) in rankings[word] %}
+							<tr>
+								<td>{{ word }}</td>
+								<td>{{ trait }}</td>
+							</tr>
+						{% endfor %}
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	{% endif %}
+	{% endif %}
+		
+{% endblock %}

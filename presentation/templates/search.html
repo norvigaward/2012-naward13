@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% set active_page = "search" %}
+{% block title %}Search{% endblock %}
+{% block content %}
+    <h3>Search associations</h3>
+    <div class="container" style="text-align: center">
+		<form action="search" method="get" class="form-search">
+		    <fieldset>
+		        <div class="input-append">
+			        <input class="input-xxlarge search-query" type="text" name="query" value="{{query}}" placeholder="Enter some words">
+			        <button class="btn btn-primary" type="submit"><i class="icon-search"></i> Search</button>
+		        </div>
+	                {% if not query %}
+	                <span class="help-block"><i class="icon-question-sign"></i> The query <a href="/search?query=microsoft+apple"><code>microsoft apple</code></a> will yield words that <em>both</em> of them are associated with. The query <a href="/search?query=microsoft+-apple"><code>microsoft -apple</code></a> yields words that are associated with <a href="/search?query=microsoft"><code>microsoft</code></a>, but <em>not</em> with <a href="/search?query=apple"><code>apple</code></a>. The query <a href="/search?query=microsoft+&plus;+apple"><code>microsoft + apple</code></a> will find words that are associated with <em>either</em> of them (or both).</span>
+			        {% endif %}
+		    </fieldset>
+        </form>
+	</div> <!-- /container -->
+	    {% if query %}
+	    <div class="alert">
+	        <strong>Found
+		    {% if not pairs %}
+            <span class="badge">{{ pairs|count }}</span>
+		    {% elif pairs|count >= limit %}
+            <span class="badge badge-success">&geq; {{ pairs|length }}</span>
+            {% else %}
+            <span class="badge badge-success">{{ pairs|length }}</span>
+		    {% endif %}
+		    results.</strong>
+		    Search query for {% for term in query.split() %}<code>{{ term }}</code> {% endfor %} completed in {{ '%0.2f' % time }} seconds.
+		</div>
+	    {% endif %}
+		
+        {% if pairs %}
+		<div class="container">
+			<!--
+			{% if explained_query != None %}
+				<p>{{explained_query}}</p>
+			{% endif %}
+			-->
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Word</th>
+						<th>Score</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for (word, total_score) in pairs %}
+						<tr>
+							<td>
+								<a href="/search?query={{ query.replace(' ','+') }}+{{word}}">{{ word }}</a>
+							</td>
+							<td>{{ total_score }}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>		
+	
+		{% endif %}
+{% endblock %}
