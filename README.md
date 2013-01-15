@@ -3,7 +3,7 @@ Traitor - Associating Concepts using the World Wide Web
 naward13 / Lesley Wevers & Oliver Jundt & Wanno Drijfhout
 --------
 
-View a demo instance of Traitor at [http://evilgeniuses.ophanus.net](). Want to know more about Traitor? Visit the [About-page](http://evilgeniuses.ophanus.net/about), the [wiki](https://github.com/norvigaward/naward13/wiki) or read  [our report](https://github.com/norvigaward/naward13/blob/master/report/Traitor%20-%20Associating%20Concepts%20using%20the%20World%20Wide%20Web%20-%20naward13%20-%20Evil%20Geniuses.pdf).
+View a demo instance of Traitor at [http://evilgeniuses.ophanus.net](http://evilgeniuses.ophanus.net). Want to know more about Traitor? Visit the [About-page](http://evilgeniuses.ophanus.net/about), the [wiki](https://github.com/norvigaward/naward13/wiki) or read  [our report](https://github.com/norvigaward/naward13/blob/master/report/Traitor%20-%20Associating%20Concepts%20using%20the%20World%20Wide%20Web%20-%20naward13%20-%20Evil%20Geniuses.pdf).
 
 ### Overview repository contents
 ##### Back-end
