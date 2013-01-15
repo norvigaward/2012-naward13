@@ -1077,17 +1077,7 @@ key "bostockd3js"
 Users can enter a list of words which become labeled nodes in the graph.
  The graphical size of the nodes indicates how many associations a concept
  has.
- The more associations a concept has, the bigger 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
--is
-\end_layout
-
-\end_inset
-
-the node.
+ The more associations a concept has, the bigger is the node.
 \end_layout
 
 \begin_layout Standard
