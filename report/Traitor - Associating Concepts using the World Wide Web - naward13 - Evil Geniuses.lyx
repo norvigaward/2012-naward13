@@ -257,9 +257,9 @@ Food, games and shelter are just as important as health
 \end_layout
 
 \begin_layout Standard
-You may know the answers to these questions or know where to look for them
- - but can a computer answer these questions for you too? We suspect this
- could be the case if the computer had a data set of associated 
+You may know the answers to these questions or know where to look for them—but
+ can a computer answer these questions for you too? We suspect this could
+ be the case if the computer had a data set of associated 
 \emph on
 concepts
 \emph default
@@ -472,11 +472,14 @@ discard sentences containing source code;
 \begin_layout Enumerate
 discard non-alphabetic tokens from sentences, such as numbers
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
-Consequently, Traitor does not process years, product model numbers and
- IDs etc.
+Consequently, 
+\noun on
+Traitor
+\noun default
+ does not process years, product model numbers and IDs etc.
 \end_layout
 
 \end_inset
@@ -487,7 +490,7 @@ Consequently, Traitor does not process years, product model numbers and
 \begin_layout Enumerate
 discard sentences that are “probably” not English
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 The heuristic to determine whether a sentence is English, is rather crude
@@ -501,8 +504,8 @@ The heuristic to determine whether a sentence is English, is rather crude
 \end_layout
 
 \begin_layout Enumerate
-count each distinct co-occurring word pair in the page’s sentences once
- and emit the tuple 
+count each distinct co-occurring word pair in the page’s sentences and emit
+ the tuple 
 \begin_inset Formula $\left(w_{1},w_{2},1\right)$
 \end_inset
 
@@ -827,15 +830,34 @@ We have chosen sentences as the semantic unit (rather than the same paragraph
  or document) for generating word pairs for two reasons.
  A technical reason is to constrain the result size.
  Pairing every non-trivial word with every other produces results in the
- order
+ order 
 \begin_inset Formula $O\left(n^{2}\right)$
 \end_inset
 
 .
- The second logical reason is based on human language semantics.
- We assume that word co-occurrences within a sentence are more likely to
+ The second 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+-logical
+\end_layout
+
+\end_inset
+
+reason is based on human language semantics.
+ We suppose that word co-occurrences within a sentence are more likely to
  represent actual concept associations than co-occurrences of words that
  are spread over a whole document.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+that are scattered across/that range across/than span a document.?
+\end_layout
+
+\end_inset
+
  
 \end_layout
 
@@ -855,8 +877,17 @@ reference "fig:Histogram"
 \end_inset
 
 ), we find that the majority of the resulting pairs have a very low count.
- To reduce storage cost of the final output, we can discard pairs with a
- count less than some 
+ To reduce storage costs
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+-cost
+\end_layout
+
+\end_inset
+
+ of the final output, we can discard pairs with a count less than some 
 \begin_inset Formula $N$
 \end_inset
 
@@ -929,7 +960,7 @@ The resulting tuples from the map-reduce step are imported into a
 SQLite3
 \noun default
 -database.
- As a front-end to this database we have built a web application with two
+ As a front-end to this database, we have built a web application with two
  query interfaces using 
 \noun on
 CherryPy
@@ -952,9 +983,17 @@ Users can enter search queries, similar to set notation, to do tasks like
 
 \begin_layout Standard
 A sequence of words, separated by spaces, denotes the conjunction/intersection
- and yields the words that are associated with all words in the sequence.
+ and yields the words that are associated with 
+\emph on
+all
+\emph default
+ words in the sequence.
  A sequence of words, separated by plus-symbols, denotes the disjunction/union
- and yields the words that are associated with any word in the sequence.
+ and yields the words that are associated with 
+\emph on
+any
+\emph default
+ word in the sequence.
  Words, preceded by a minus-symbol, denote the negation/complement.
 \end_layout
 
@@ -1038,7 +1077,17 @@ key "bostockd3js"
 Users can enter a list of words which become labeled nodes in the graph.
  The graphical size of the nodes indicates how many associations a concept
  has.
- The more associations a concept has, the bigger is the node.
+ The more associations a concept has, the bigger 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+-is
+\end_layout
+
+\end_inset
+
+the node.
 \end_layout
 
 \begin_layout Standard
@@ -1181,12 +1230,9 @@ yellow
 \emph default
 .
  These are rather good results compared to Google Trends
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref <<http://www.google.com/trends/explore#q=lance%20armstrong>>
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "googletrends"
 
 \end_inset
 
@@ -1579,9 +1625,12 @@ good
 status collapsed
 
 \begin_layout Plain Layout
-The intersection would determine the words that are associated by all words
- in the sentence with the consequence that, if only one word is out of context,
- the resulting set of associations would be empty.
+The intersection would determine the words that are associated by 
+\emph on
+all
+\emph default
+ words in the sentence with the consequence that, if only one word is out
+ of context, the resulting set of associations would be empty.
 \end_layout
 
 \end_inset
@@ -1681,8 +1730,17 @@ reference "fig:Visualizing-countries"
 \end_inset
 
 ) resembles geographical, economic or historical relationships between them,
- but it requires knowledge of the user to understand what the visible clusters
- actually mean.
+ but the user needs additional knowledge
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+it requires knowledge of the user
+\end_layout
+
+\end_inset
+
+ to understand what the visible clusters actually mean.
 \end_layout
 
 \begin_layout Standard
@@ -1820,7 +1878,7 @@ name "fig:Visualizing-countries"
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Various demo visualizations
+Various demo visualizations.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Visualizations"
@@ -1890,11 +1948,22 @@ apple
 Traitor
 \noun default
  does not distinguish between different meanings of words and it consequently
- becomes very difficult to see which associations belong to which 
+ becomes very difficult to see in the query interfaces which associations
+ belong to which 
 \emph on
 meaning
 \emph default
- in the query interfaces.
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+moved: in the query interfaces
+\end_layout
+
+\end_inset
+
+.
  In practice this is not a problem if there exists one dominant meaning
  of the word and the user is interested in exactly this meaning and only
  the most strongly associated concepts.
@@ -1917,14 +1986,42 @@ apple
 \begin_inset Quotes erd
 \end_inset
 
-, you will have to click trough several result pages to actually find something
- about the 
+, you will have to click through
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+-trough
+\end_layout
+
+\end_inset
+
+ several result pages to actually find something about the 
 \emph on
 fruit
 \emph default
 , because the company Apple is used much more often on the web.
- However, as with Google, combining concepts in a query can help to achieve
- the wanted results (e.g.
+ However, as with Google Search
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
++Search
+\end_layout
+
+\end_inset
+
+, combining concepts in a query can help to achieve the intended
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+-wanted
+\end_layout
+
+\end_inset
+
+ results (e.g.
  “
 \begin_inset Flex Code
 status collapsed
